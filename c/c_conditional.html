@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+  </head>
+
+  <body>
+    <header>
+      <nav><h1><a href="../index.html">Programming</a></h1></nav>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="c_index.html">C 언어</a></li>
+        <li>
+          <a href="../web/web.html">웹</a>
+          <ul>
+            <li><a href="../web/html/html_index.html">HTML</a></li>
+            <li><a href="../web/css/css_index.html">CSS</a></li>
+            <li><a href="../web/javascript/javascript_index.html">JavaScript</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <article>
+      <h2>조건문</h2>
+
+      <p><h4>조건문 : 조건이 '참'이면 실행, '거짓'이면 실행하지 않음</h4></p>
+
+      <hr>
+
+      <p>
+        <h3>if 문, else 문</h3>
+
+        <p>
+          <strong>코드</strong>
+          <pre><code>
+  if (조건){
+    //조건이 '참'일 때 실행할 코드
+  }
+  else {
+    //위의 if 문의 조건이 '거짓'일 때 실행할 코드
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>두 정수를 받아 나눗셈을 하는 코드, 0으로 나누면 오류를 출력</strong>
+          <pre><code>
+  void main() {
+    int num1, num2;
+
+    printf("Input two number : ");
+    scanf("%d %d", &num1, &num2);
+
+    if (num2 == 0) {
+      printf("Division by Zero!!\n");
+    }
+    else {
+      printf("%d / %d = %d\n", num1, num2, num1 / num2);
+    }
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>결과 1</strong>
+          <pre><code>
+  Input two number : 10 2
+  10 / 2 = 5
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>결과 2</strong>
+          <pre><code>
+  Input two number : 10 0
+  Division by Zero!!
+          </code></pre>
+        </p>
+      </p>
+
+      <hr>
+
+      <p>
+        <h3>if ~ else 문</h3>
+
+        <p>
+          <strong>코드</strong>
+          <pre><code>
+  if (조건){
+    //조건이 '참'일 때 실행할 코드
+  }
+  else if (조건) {
+    //위의 if 문의 조건이 '거짓'이고, 현재의 if 문의 조건이 '참'일 때 실행할 코드
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>입력받은 수가 양수, 0, 음수중에 어디에 해당하는지 출력하는 코드</strong>
+          <pre><code>
+  void main() {
+    int number;
+
+    printf("Input number : ");
+    scanf("%d", &number);
+
+    if (number > 0) {
+      printf("Positive number!\n");
+    }
+    else if (number == 0) {
+      printf("Zero!\n");
+    }
+    else {
+      printf("Negative number!\n");
+    }
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>결과</strong>
+          <pre><code>
+  Input number : 135
+  Positive number!
+          </code></pre>
+        </p>
+      </p>
+
+      <hr>
+
+      <p>
+        <h3>switch 문</h3>
+
+        <p>
+          <strong>코드</strong>
+          <pre><code>
+  switch (인자) {
+  case (값1):
+    //'인자'가 '값1'과 같을 때 실행할 코드
+    break;
+  case (값2):
+    //'인자'가 '값2'과 같을 때 실행할 코드
+    break;
+  case (값3):
+    //'인자'가 '값3'과 같을 때 실행할 코드
+    break;
+  default:
+    //'인자'와 만족하는 case 레이블이 없을 경우 실행할 코드
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>두 정수와, 실행할 사칙연산을 입력받아 계산하여 출력하는 코드</strong>
+          <pre><code>
+  void main() {
+    int num1, num2;
+    char operator;
+
+    printf("Input formula : ");
+    scanf("%d %c %d", &num1, &operator, &num2);
+
+    switch (operator){
+    case '+':
+      printf("%d + %d = %d\n", num1, num2, num1 + num2);
+      break;
+    case '-':
+      printf("%d - %d = %d\n", num1, num2, num1 - num2);
+      break;
+    case '*':
+      printf("%d * %d = %d\n", num1, num2, num1 * num2);
+      break;
+    case '/':
+      printf("%d / %d = %d\n", num1, num2, num1 / num2);
+      break;
+    }
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>결과</strong>
+          <pre><code>
+  Input formula : 12 * 15
+  12 * 15 = 180
+          </code></pre>
+        </p>
+      </p>
+
+      <hr>
+
+      <p>
+        <h3>삼항 연산자</h3>
+
+        <p>
+          <strong>코드</strong>
+          <pre><code>
+  (조건) ? (조건이 '참'일 때 반환할 값) : (조건이 '거짓'일 때 반환할 값);
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>입력한 두 수중 큰 수를 출력하는 코드</strong>
+          <pre><code>
+  void main() {
+    int num1, num2;
+
+    printf("Input two number : ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("Bigger number : %d\n", (num1 > num2) ? num1 : num2);
+  }
+          </code></pre>
+        </p>
+
+        <p>
+          <strong>결과</strong>
+          <pre><code>
+  Input two number : 100 105
+  Bigger number : 105
+          </code></pre>
+        </p>
+      </p>
+    </article>
+  </body>
+</html>
