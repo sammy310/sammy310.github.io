@@ -1,236 +1,242 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Programming</title>
     <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
     <meta name="description" content="프로그래밍 관련 정보들">
-  </head>
 
-  <body>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
     <header>
-      <nav><h1><a href="../index.html">Programming</a></h1></nav>
+        <nav>
+            <h1><a href="../index.html">Programming</a></h1>
+        </nav>
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="c_index.html">C 언어</a></li>
-        <li>
-          <a href="../web/web.html">웹</a>
-          <ul>
-            <li><a href="../web/html/html_index.html">HTML</a></li>
-            <li><a href="../web/css/css_index.html">CSS</a></li>
-            <li><a href="../web/javascript/javascript_index.html">JavaScript</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="c_index.html">C 언어</a></li>
+                <li>
+                    <a href="../web/web.html">웹</a>
+                    <ul>
+                        <li><a href="../web/html/html_index.html">HTML</a></li>
+                        <li><a href="../web/css/css_index.html">CSS</a></li>
+                        <li><a href="../web/javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
-    <article>
-      <p><h4>반복문 : 조건에 따라 반복함</h4></p>
+        <main>
+            <p>
+                <h4>반복문 : 조건에 따라 반복함</h4>
+            </p>
 
-      <hr>
+            <hr>
 
-      <p>
-        <h3>while 문</h3>
+            <p>
+                <h3>while 문</h3>
 
-        <p>
-          <strong>변수 number이 5 미만일 때 까지 number의 값을 출력하는 코드</strong>
-          <pre><code>
-  void main(){
+                <p>
+                    <strong>변수 number이 5 미만일 때 까지 number의 값을 출력하는 코드</strong>
+                    <pre><code>
+void main(){
     int number = 1;
 
     while (number < 5) {
-      printf("Current number is %d\n", number);
-      number++;
+        printf("Current number is %d\n", number);
+        number++;
     }
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>결과</strong>
-          <pre><code>
-  Current number is 1
-  Current number is 2
-  Current number is 3
-  Current number is 4
-          </code></pre>
-        </p>
+                <p>
+                    <strong>결과</strong>
+                    <pre><code>
+Current number is 1
+Current number is 2
+Current number is 3
+Current number is 4
+                    </code></pre>
+                </p>
 
-        <p>
-          소괄호 안의 'number < 10' 부분이 "조건"<br>
-          중괄호 안은 조건을 만족할 동안 반복할 "코드"<br>
-          <strong>"조건을 만족하면 중괄호 안의 코드를 계속 반복해서 실행함"</strong><br>
-        </p>
-      </p>
+                <p>
+                    소괄호 안의 'number < 10' 부분이 "조건"<br>
+                    중괄호 안은 조건을 만족할 동안 반복할 "코드"<br>
+                    <strong>"조건을 만족하면 중괄호 안의 코드를 계속 반복해서 실행함"</strong><br>
+                </p>
+            </p>
 
-      <hr>
+            <hr>
 
-      <p>
-        <h3>do ~ while 문</h3>
+            <p>
+                <h3>do ~ while 문</h3>
 
-        <p>
-          <strong>0이 입력될 때 까지 계속 정수를 받아 입력된 값의 합을 출력하는 코드</strong>
-          <pre><code>
-  void main() {
+                <p>
+                    <strong>0이 입력될 때 까지 계속 정수를 받아 입력된 값의 합을 출력하는 코드</strong>
+                    <pre><code>
+void main() {
     int number;
     int sum = 0;
 
     do {
-      printf("Input number : ");
-      scanf("%d", &number);
-      sum += number;
+        printf("Input number : ");
+        scanf("%d", &number);
+        sum += number;
     } while (number != 0);
 
     printf("\nSum : %d\n", sum);
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>결과</strong>
-          <pre><code>
-  Input number : 10
-  Input number : 50
-  Input number : 70
-  Input number : 40
-  Input number : 0
+                <p>
+                    <strong>결과</strong>
+                    <pre><code>
+Input number : 10
+Input number : 50
+Input number : 70
+Input number : 40
+Input number : 0
 
-  Sum : 170
-          </code></pre>
-        </p>
+Sum : 170
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>"반복영역이 무조건 한 번 이상 실행이 됨"</strong><br>
-          코드를 한번 이상은 무조건 실행해야할 때 유용함<br>
-        </p>
-      </p>
+                <p>
+                    <strong>"반복영역이 무조건 한 번 이상 실행이 됨"</strong><br> 코드를 한번 이상은 무조건 실행해야할 때 유용함<br>
+                </p>
+            </p>
 
-      <hr>
+            <hr>
 
-      <p>
-        <h3>for 문</h3>
+            <p>
+                <h3>for 문</h3>
 
-        <p>
-          <strong>1부터 20까지의 합을 구하는 코드</strong>
-          <pre><code>
-  void main() {
+                <p>
+                    <strong>1부터 20까지의 합을 구하는 코드</strong>
+                    <pre><code>
+void main() {
     int i;
     int sum = 0;
 
     for (i = 1; i <= 20; i++) {
-      sum += i;
+        sum += i;
     }
 
     printf("Sum of 1 to 20 : %d\n", sum);
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>결과</strong>
-          <pre><code>
-  Sum of 1 to 20 : 210
+                <p>
+                    <strong>결과</strong>
+                    <pre><code>
+Sum of 1 to 20 : 210
           </code></pre>
-        </p>
+                </p>
 
-        <p>
-          <strong>for 문의 구조</strong>
-          <pre><code>
-  for ( 초기식 ; 조건식 ; 증감식 ) {
+                <p>
+                    <strong>for 문의 구조</strong>
+                    <pre><code>
+for ( 초기식 ; 조건식 ; 증감식 ) {
     // 반복하는 코드
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <ul>
-            <li>
-              초기식<br>
-              반복을 위한 변수의 선언 및 초기화에 사용
-            </li>
+                <p>
+                    <ul>
+                        <li>
+                            초기식<br> 반복을 위한 변수의 선언 및 초기화에 사용
+                        </li>
 
-            <li>
-              조건식<br>
-              반복의 조건을 검사
-            </li>
+                        <li>
+                            조건식<br> 반복의 조건을 검사
+                        </li>
 
-            <li>
-              증감식<br>
-              반복의 조건을 '거짓'으로 만드는 증가, 감소 연산
-            </li>
-          </ul>
-        </p>
+                        <li>
+                            증감식<br> 반복의 조건을 '거짓 '으로 만드는 증가, 감소 연산
+                        </li>
+                    </ul>
+                </p>
 
-        <p><strong>"초기식, 조건식, 증감식은 없어도 상관 없음"</strong></p>
-      </p>
+                <p><strong>"초기식, 조건식, 증감식은 없어도 상관 없음"</strong></p>
+            </p>
 
-      <hr>
+            <hr>
 
-      <p>
-        <h3>break : 가장 가까이 감싸고 있는 반복문 하나를 빠져 나옴</h3>
+            <p>
+                <h3>break : 가장 가까이 감싸고 있는 반복문 하나를 빠져 나옴</h3>
 
-        <p>
-          <strong>코드</strong>
-          <pre><code>
-  void main() {
+                <p>
+                    <strong>코드</strong>
+                    <pre><code>
+void main() {
     int number = 0;
 
     while (1) {
-      if (number < 5) {
+        if (number < 5) {
         break;
-      }
-      printf("number : %d\n", number);
+        }
+        printf("number : %d\n", number);
     }
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>결과</strong>
-          <pre><code>
-  number : 0
-  number : 1
-  number : 2
-  number : 3
-  number : 4
-          </code></pre>
-        </p>
-      </p>
+                <p>
+                    <strong>결과</strong>
+                    <pre><code>
+number : 0
+number : 1
+number : 2
+number : 3
+number : 4
+                    </code></pre>
+                </p>
+            </p>
 
-      <hr>
+            <hr>
 
-      <p>
-        <h3>continue : 반복문의 조건검사 위치로 이동함</h3>
+            <p>
+                <h3>continue : 반복문의 조건검사 위치로 이동함</h3>
 
-        <p>
-          <strong>코드</strong>
-          <pre><code>
-  void main() {
+                <p>
+                    <strong>코드</strong>
+                    <pre><code>
+void main() {
     int number = 1;
 
     while (number <= 10) {
-      if (number % 2 == 0) {
+        if (number % 2 == 0) {
         continue;
-      }
-      printf("number : %d\n", number);
+        }
+        printf("number : %d\n", number);
     }
-  }
-          </code></pre>
-        </p>
+}
+                    </code></pre>
+                </p>
 
-        <p>
-          <strong>결과</strong>
-          <pre><code>
-  number : 1
-  number : 3
-  number : 5
-  number : 7
-  number : 9
-          </code></pre>
-        </p>
-      </p>
-    </article>
-  </body>
+                <p>
+                    <strong>결과</strong>
+                    <pre><code>
+number : 1
+number : 3
+number : 5
+number : 7
+number : 9
+                    </code></pre>
+                </p>
+            </p>
+        </main>
+    </section>
+</body>
+
 </html>
