@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="top"></div>
     <header>
         <nav>
             <h1><a href="../index.html">Programming</a></h1>
@@ -20,7 +21,20 @@
     <section>
         <nav class="nav">
             <ul>
-                <li><a href="c_index.html">C 언어</a></li>
+                <li><a href="c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="c_variable.html">변수</a></li>
+                        <li><a href="c_operator.html">연산자</a></li>
+                        <li><a href="c_datatype.html">자료형</a></li>
+                        <li><a href="c_conditional.html">조건문</a></li>
+                        <li><a href="c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="../web/web.html">웹</a>
                     <ul>
@@ -35,7 +49,7 @@
         <main>
             <h2>연산자</h2>
 
-            <p>
+            <article>
                 <h3>이항 연산자 : 두 개의 피연산자를 요구함</h3>
 
                 <ul>
@@ -95,11 +109,11 @@ number = 10 % 3;
                         </ul>
                     </p>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>증가, 감소 연산자 : 변수에 저장된 값을 1 증가, 감소 시킴</h3>
 
                 <ul>
@@ -129,11 +143,11 @@ number = 10 % 3;
                         </ul>
                     </li>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>관계 연산자 : 대소와 동등의 관계를 따짐</h3>
 
                 <ul>
@@ -161,11 +175,11 @@ number = 10 % 3;
                         >=<br>
                     </li>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>논리 연산자 : AND, OR, NOT</h3>
 
                 <ul>
@@ -181,11 +195,11 @@ number = 10 % 3;
                         !<br>
                     </li>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>비트 연산자 : 비트 단위로 연산을 함</h3>
 
                 <ul>
@@ -213,11 +227,11 @@ number = 10 % 3;
                         >><br>
                     </li>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>복합 대입 연산자 : 다른 연산자와 합쳐진 형태의 대입 연산자</h3>
 
                 <ul>
@@ -261,11 +275,11 @@ number = 10 % 3;
                         ^=<br>
                     </li>
                 </ul>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>콤마 연산자 : 둘 이상의 변수를 동시에 선언하거나, 둘 이상의 문장을 한 행에 삽입하는 경우에 사용</h3>
 
                 <ul>
@@ -273,10 +287,18 @@ number = 10 % 3;
                         ,<br>
                     </li>
                 </ul>
-            </p>
-
+            </article>
         </main>
     </section>
+
+    <footer id="footer">
+        
+    </footer>
+    
+    <div class="scroll_button">
+        <a href="#top" class="scroll_button_top">↑</a>
+        <a href="#footer" class="scroll_button_footer">↓</a>
+    </div>
 </body>
 
 </html>

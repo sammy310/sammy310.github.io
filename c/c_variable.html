@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="top"></div>
     <header>
         <nav>
             <h1><a href="../index.html">Programming</a></h1>
@@ -20,7 +21,20 @@
     <section>
         <nav class="nav">
             <ul>
-                <li><a href="c_index.html">C 언어</a></li>
+                <li><a href="c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="c_variable.html">변수</a></li>
+                        <li><a href="c_operator.html">연산자</a></li>
+                        <li><a href="c_datatype.html">자료형</a></li>
+                        <li><a href="c_conditional.html">조건문</a></li>
+                        <li><a href="c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="../web/web.html">웹</a>
                     <ul>
@@ -41,26 +55,37 @@
 
             <hr>
 
-            <p>
-                <h4>선언</h4>
-                <pre><code>
+            <article>
+                <p>
+                    <h4>선언</h4>
+                    <pre><code>
 void main() {
     int number;
 }
-        </code></pre>
-            </p>
-            <p>
-                <h4>선언과 동시에 초기화</h4>
-                <pre><code>
+            </code></pre>
+                </p>
+                <p>
+                    <h4>선언과 동시에 초기화</h4>
+                    <pre><code>
 void main() {
     int number = 10;
 }
-        </code></pre>
-            </p>
+            </code></pre>
+                </p>
 
-            <p>변수를 선언만 하고 초기화하지 않으면 쓰레기 값(아무 의미가 없는 값)이 저장됨</p>
+                <p>변수를 선언만 하고 초기화하지 않으면 쓰레기 값(아무 의미가 없는 값)이 저장됨</p>
+            </article>
         </main>
     </section>
+
+    <footer id="footer">
+        
+    </footer>
+    
+    <div class="scroll_button">
+        <a href="#top" class="scroll_button_top">↑</a>
+        <a href="#footer" class="scroll_button_footer">↓</a>
+    </div>
 </body>
 
 </html>

@@ -1,45 +1,151 @@
+html {
+    background-color: rgba(80, 30, 80, 0.7);
+}
+
 body {
     display: flex;
     flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
-section {
+section, footer{
     display: flex;
 }
 
 header {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid black;
     text-align: center;
-    border-bottom-width: thick;
     padding: 2rem;
+    
+    background-color: rgba(80, 120, 190, 0.8);
 }
 
 .nav {
-    border-right: 2px solid gray;
+    border-right: 1px solid black;
     padding: 1rem;
-    padding-left: 0;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    background-color: rgba(180, 160, 200, 0.8);
 }
 
 main {
     padding: 0.8rem;
     padding-left: 2rem;
+    padding-bottom: 5rem;
+    background-color: rgba(250, 250, 250, 0.7);
+    flex-grow: 1;
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-bottom: 10rem;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    border: 1px solid black;
+    background-color: rgba(80, 30, 80, 0.2);
+    padding: 0.5rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+article {
+    border: 1px solid black;
+    padding: 2.5rem;
+    margin: 1rem;
+    background-color: rgb(230, 230, 230);
 }
 
 
-.nav ul {
-    list-style-type: none;
-}
-
-.nav ul ul {
-    list-style-type: disc
-}
 
 pre {
     border: 2px solid blueviolet;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-left: 1rem;
-    background-color: aliceblue;
+    background-color: beige;
     line-height: 1.3;
 }
+
+
+
+
+.nav > ul {
+    border: 2px solid black;
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    background-color: lightsteelblue;
+}
+
+.nav ul ul {
+    font-size: 1rem;
+    list-style-type: disc;
+    color: gray;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration-line: none;
+}
+a:hover {
+    color: orange;
+    text-decoration-line: underline;
+}
+
+.nav ul ul a {
+    color: darkslategray;
+}
+
+.nav ul ul a:hover {
+    color: orange;
+}
+
+
+.scroll_button {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 2rem;
+    background-color: darkgoldenrod;
+}
+
+.scroll_button_top, .scroll_button_footer {
+    border: 1px solid;
+    background-color: burlywood;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.scroll_button_top {
+    margin-bottom: 0;
+}
+
+.scroll_button a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="top"></div>
     <header>
         <nav>
             <h1><a href="../index.html">Programming</a></h1>
@@ -20,7 +21,20 @@
     <section>
         <nav class="nav">
             <ul>
-                <li><a href="c_index.html">C 언어</a></li>
+                <li><a href="c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="c_variable.html">변수</a></li>
+                        <li><a href="c_operator.html">연산자</a></li>
+                        <li><a href="c_datatype.html">자료형</a></li>
+                        <li><a href="c_conditional.html">조건문</a></li>
+                        <li><a href="c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="../web/web.html">웹</a>
                     <ul>
@@ -33,13 +47,15 @@
         </nav>
 
         <main>
+            <h2>조건문</h2>
+            
             <p>
                 <h4>반복문 : 조건에 따라 반복함</h4>
             </p>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>while 문</h3>
 
                 <p>
@@ -71,11 +87,11 @@ Current number is 4
                     중괄호 안은 조건을 만족할 동안 반복할 "코드"<br>
                     <strong>"조건을 만족하면 중괄호 안의 코드를 계속 반복해서 실행함"</strong><br>
                 </p>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>do ~ while 문</h3>
 
                 <p>
@@ -112,11 +128,11 @@ Sum : 170
                 <p>
                     <strong>"반복영역이 무조건 한 번 이상 실행이 됨"</strong><br> 코드를 한번 이상은 무조건 실행해야할 때 유용함<br>
                 </p>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>for 문</h3>
 
                 <p>
@@ -168,11 +184,11 @@ for ( 초기식 ; 조건식 ; 증감식 ) {
                 </p>
 
                 <p><strong>"초기식, 조건식, 증감식은 없어도 상관 없음"</strong></p>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>break : 가장 가까이 감싸고 있는 반복문 하나를 빠져 나옴</h3>
 
                 <p>
@@ -201,11 +217,11 @@ number : 3
 number : 4
                     </code></pre>
                 </p>
-            </p>
+            </article>
 
             <hr>
 
-            <p>
+            <article>
                 <h3>continue : 반복문의 조건검사 위치로 이동함</h3>
 
                 <p>
@@ -234,9 +250,18 @@ number : 7
 number : 9
                     </code></pre>
                 </p>
-            </p>
+            </article>
         </main>
     </section>
+                        
+    <footer id="footer">
+        
+    </footer>
+    
+    <div class="scroll_button">
+        <a href="#top" class="scroll_button_top">↑</a>
+        <a href="#footer" class="scroll_button_footer">↓</a>
+    </div>
 </body>
 
 </html>
