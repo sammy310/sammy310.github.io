@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+    
+    <style>
+        h5 {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="html_lists.html">목록</a></li>
+                                <li><a href="html_tables.html">표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../css/css_index.html">CSS</a></li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>의미론적 태그</h2>
+            
+            <article>
+                <h3>의미론적 태그(Semantic Element)</h3>
+                
+                <h4>의미론적 태그는 브라우저와 개발자 모두에게 명확한 의미를 전달해줌</h4>
+                
+                <dl>
+                    <dt><a href="#main">&lt;main&gt;&lt;/main&gt;</a></dt>
+                    <dd>문서의 주 컨텐츠를 지정함</dd>
+                    
+                    <dt><a href="#article">&lt;article&gt;&lt;/article&gt;</a></dt>
+                    <dd>본문을 정의함</dd>
+                    
+                    <dt><a href="#header">&lt;header&gt;&lt;/header&gt;</a></dt>
+                    <dd>문서 또는 섹션의 머리글을 지정함</dd>
+                    
+                    <dt><a href="#footer">&lt;footer&gt;&lt;/footer&gt;</a></dt>
+                    <dd>문서 또는 섹션의 바닥글을 정의함</dd>
+                    
+                    <dt><a href="#nav">&lt;nav&gt;&lt;/nav&gt;</a></dt>
+                    <dd>내비게이션 링크를 정의함</dd>
+                    
+                    <dt><a href="#aside">&lt;aside&gt;&lt;/aside&gt;</a></dt>
+                    <dd>페이지 컨텐츠 이외의 컨텐츠를 정의함</dd>
+                    
+                    <dt><a href="#section">&lt;section&gt;&lt;/section&gt;</a></dt>
+                    <dd>문서의 섹션을 정의함</dd>
+                    
+                    <dt><a href="#mark">&lt;mark&gt;&lt;/mark&gt;</a></dt>
+                    <dd>표시되거나 강조 표시된 텍스트를 정의함</dd>
+                    
+                    <dt><a href="#figure">&lt;figure&gt;&lt;/figure&gt;</a></dt>
+                    <dd>그림, 다이어그램, 사진, 코드 목록 등과 같은 독립적 컨텐츠를 정의함</dd>
+                    
+                    <dt><a href="#figcaption">&lt;figcaption&gt;&lt;/figcaption&gt;</a></dt>
+                    <dd>&lt;figure&gt; 요소의 설명을 정의함</dd>
+                    
+                    <dt><a href="#details">&lt;details&gt;&lt;/details&gt;</a></dt>
+                    <dd>사용자가 보거나 숨길 수 있는 추가 세부 정보를 정의함</dd>
+                    
+                    <dt><a href="#summary">&lt;summary&gt;&lt;/summary&gt;</a></dt>
+                    <dd>&lt;details&gt; 요소의 가시적인 머리글을 정의함</dd>
+                    
+                    <dt><a href="#time">&lt;time&gt;&lt;/time&gt;</a></dt>
+                    <dd>날짜, 시간을 정의함</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="main">&lt;main&gt;&lt;/main&gt;</h3>
+                
+                <h4>문서의 주 컨텐츠를 지정함</h4>
+                
+                <p>&lt;main&gt; 태그 내부의 내용은 그 문서에 고유해야함</p>
+                <p>사이드 바, 내비게이션 링크, 저작권 정보, 사이트 로고, 검색 양식 같은 문서에 걸쳐 반복되는 콘텐츠가 포함되어 있지 않아야 함</p>
+                
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="article">&lt;article&gt;&lt;/article&gt;</h3>
+                
+                <h4>본문을 정의함</h4>
+                
+                <p>&lt;article&gt; 태그는 독립적인 자체 포함 콘텐츠를 지정함</p>
+                <p>&lt;article&gt; 안의 내용은 자체적으로 이해할 수 있어야 하고, 그것을 사이트의 나머지 부분과 독립적으로 나눌 수 있어야 함</p>
+                
+                <p>&lt;article&gt; 태그의 잠재적 출쳐</p>
+                <ul>
+                    <li>블로그 포스트</li>
+                    <li>포럼 포스트</li>
+                    <li>뉴스 스토리</li>
+                    <li>댓글</li>
+                </ul>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="header">&lt;header&gt;&lt;/header&gt;</h3>
+                
+                <h4>문서 또는 섹션의 머리글을 지정함</h4>
+                
+                <p>&lt;header&gt; 태그는 소개 컨텐츠 또는 내비게이션 링크들의 세트를 나타냄</p>
+                
+                <p>일반적으로 다음 요소가 포함됨</p>
+                <ul>
+                    <li>하나 이상의 &lt;h1&gt;~&lt;h6&gt; 태그</li>
+                    <li>로고 또는 아이콘</li>
+                    <li>저자 정보</li>
+                </ul>
+                
+                <p>한 문서에 여러가지 &lt;header&gt; 태그가 있을 수 있음</p>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="footer">&lt;footer&gt;&lt;/footer&gt;</h3>
+                
+                <h4>문서 또는 섹션의 바닥글을 정의함</h4>
+                
+                <p>&lt;footer&gt; 태그는 문서 또는 섹션의 바닥 글을 정의함</p>
+                <p>&lt;footer&gt; 태그에는 포함된 요소에 대한 정보가 포함되어야 합니다</p>
+                
+                <p>일반적으로 다음 요소가 포함됨</p>
+                <ul>
+                    <li>저자 정보</li>
+                    <li>저작권 정보</li>
+                    <li>연락처</li>
+                    <li>사이트 맵</li>
+                    <li>최상위 링크로 돌아가기</li>
+                    <li>관련 서류</li>
+                </ul>
+                
+                <p>한 문서에 여러가지 &lt;footer&gt; 태그가 있을 수 있음</p>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="nav">&lt;nav&gt;&lt;/nav&gt;</h3>
+                
+                <h4>내비게이션 링크를 정의함</h4>
+                
+                <p>&lt;nav&gt; 태그는 탐색 링크 세트를 정의함</p>
+                
+                <p>&lt;nav&gt; 태그는 <strong>주요 탐색 링크 블록 전용</strong>이기 때문에 문서의 일부 링크는 &lt;nav&gt; 태그를 쓰면 안됨</p>
+                
+                <p>장애가 있는 사용자를 위한 화면 판독기와 같은 브라우저는 이 태그를 사용하여 이 콘텐츠의 초기 렌더링을 생략할지 여부를 결정할 수 있음</p>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="aside">&lt;aside&gt;&lt;/aside&gt;</h3>
+                
+                <h4>페이지 컨텐츠 이외의 컨텐츠를 정의함</h4>
+                
+                <p>&lt;aside&gt; 태그는 배치된 콘텐츠 이외의 일부 콘텐츠를 정의함</p>
+                <p>&lt;aside&gt; 태그의 내용은 주변 내용과 관련이 있어야 함</p>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="section">&lt;section&gt;&lt;/section&gt;</h3>
+                
+                <h4>문서의 섹션을 정의함</h4>
+                
+                <p>&lt;section&gt; 태그는 챕터, 머리글, 바닥글 또는 기타 섹션과 같은 문서의 섹션을 정의함</p>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="mark">&lt;mark&gt;&lt;/mark&gt;</h3>
+                
+                <h4>표시되거나 강조 표시된 텍스트를 정의함</h4>
+                
+                <p>&lt;mark&gt; 태그는 <mark>표시된</mark> 텍스트를 정의함</p>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;텍스트의 일부를 &lt;mark&gt;강조&lt;/mark&gt; 표시함&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/semantic_element/ex_mark.html" class="iframe_html_example"></iframe>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="figure">&lt;figure&gt;&lt;/figure&gt;</h3>
+                
+                <h4>그림, 다이어그램, 사진, 코드 목록 등과 같은 독립적 컨텐츠를 정의함</h4>
+                
+                <p>&lt;figure&gt; 태그의 내용은 주 흐름과 관련이 있으나, 그 위치는 주 흐름과 무관하며, 제거된 경우에는 문서의 흐름에 영향을 미치지 않아야 함</p>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h2&gt;Team Fortress 2&lt;/h2&gt;
+    &lt;p&gt;최초로 FPS 게임에 병과 요소를 도입한 퀘이크 팀 포트리스의 후속작&lt;/p&gt;
+    &lt;p&gt;병과들의 개성이 매우 강하고 밸런스가 잘 조정된 편으로, 병과마다 다양한 플레이를 즐길 수 있다&lt;/p&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="tf2.png" alt="TF2", title="TF2"&gt;
+    &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/semantic_element/ex_figure.html" class="iframe_html_example" height="330"></iframe>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="figcaption">&lt;figcaption&gt;&lt;/figcaption&gt;</h3>
+                
+                <h4>&lt;figure&gt; 요소의 설명을 정의함</h4>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h2&gt;Team Fortress 2&lt;/h2&gt;
+    &lt;p&gt;최초로 FPS 게임에 병과 요소를 도입한 퀘이크 팀 포트리스의 후속작&lt;/p&gt;
+    &lt;p&gt;병과들의 개성이 매우 강하고 밸런스가 잘 조정된 편으로, 병과마다 다양한 플레이를 즐길 수 있다&lt;/p&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="tf2.png" alt="TF2", title="TF2"&gt;
+        &lt;figcaption&gt;Team Fortress 2&lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/semantic_element/ex_figcaption.html" class="iframe_html_example" height="350"></iframe>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="details">&lt;details&gt;&lt;/details&gt;</h3>
+                
+                <h4>사용자가 보거나 숨길 수 있는 추가 세부 정보를 정의함</h4>
+                
+                <p>&lt;details&gt; 태그는 사용자가 볼 수 있거나 원하는 곳에 숨길 수 있는 추가 세부 정보를 지정함</p>
+                
+                <p>&lt;details&gt; 태그를 사용하여 사용자가 열고 닫을 수 있는 대화형 위젯을 생성할 수 있음</p>
+                <p>어떤 종류의 내용이든지 &lt;details&gt; 태그에 담을 수 있음</p>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>open</dt>
+                    <dd>&lt;details open&gt;</dd>
+                    <dd>bool 형식으로써, 여기에 표시되는 정보를 사용자가 볼 수 있도록(open) 지정함</dd>
+                </dl>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;/head&gt;
+
+&lt;body&gt;
+    &lt;details open&gt;
+        &lt;p&gt;All Rights Reserved.&lt;/p&gt;
+    &lt;/details&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/semantic_element/ex_details.html" class="iframe_html_example"></iframe>
+                
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="summary">&lt;summary&gt;&lt;/summary&gt;</h3>
+                
+                <h4>&lt;details&gt; 요소의 가시적인 머리글을 정의함</h4>
+                
+                <p>&lt;summary&gt; 태그는 세부 정보에 대해 볼 수 있는 제목을 지정하는 데 사용됨</p>
+                <p>제목을 클릭하여 세부 정보를 보거나 숨길 수 있음</p>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;/head&gt;
+
+&lt;body&gt;
+    &lt;details&gt;
+        &lt;summary&gt;Copyright&lt;/summary&gt;
+        &lt;p&gt;All Rights Reserved.&lt;/p&gt;
+    &lt;/details&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/semantic_element/ex_summary.html" class="iframe_html_example"></iframe>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="time">&lt;time&gt;&lt;/time&gt;</h3>
+                
+                <h4>날짜, 시간을 정의함</h4>
+                
+                <p>&lt;time&gt; 태그는 사람이 읽을 수 있는 날짜,시간을 정의함</p>
+                
+                <p>이 태그는 날짜와 시간을 컴퓨터가 읽을 수 있는 방식으로 인코딩하여 사용자 에이전트가 생일 달력이나 예정된 이벤트를 사용자의 달력에 추가 할 수 있게 해주며 검색 엔진이 더 똑똑한 검색 결과를 생성 할 수 있도록 함</p>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>datetime</dt>
+                    <dd>&lt;time datetime="YYYY-MM-DDThh:mm:ssTZD"&gt;</dd>
+                    <dd>&lt;time&gt; 태그의 기계가 읽을 수있는 날짜 / 시간을 나타냄</dd>
+                    <dd><h5>구성 요소</h5>
+                        <ul>
+                            <li>YYYY - year (e.g. 2011)</li>
+                            <li>MM - month (e.g. 01 for January)</li>
+                            <li>DD - day of the month (e.g. 08)</li>
+                            <li>T or a space - a separator (required if time is also specified)</li>
+                            <li>hh - hour (e.g. 22 for 10.00pm)</li>
+                            <li>mm - minutes (e.g. 55)</li>
+                            <li>ss - seconds (e.g. 03)</li>
+                            <li>TZD - Time Zone Designator (Z denotes Zulu, also known as Greenwich Mean Time)</li>
+                            <li>P - a prefix for "Period"</li>
+                            <li>D - a prefix for "Days"</li>
+                            <li>H - a prefix for "Hours"</li>
+                            <li>M - a prefix for "Minutes"</li>
+                            <li>S - a prefix for "Seconds"</li>
+                        </ul>
+                    </dd>
+                </dl>
+                
+            </article>
+            
+            <hr>
+            
+            <article><h3>참고 : <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">w3schools Semantics</a></h3></article>
+            
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>

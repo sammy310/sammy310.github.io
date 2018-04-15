@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="html_lists.html">목록</a></li>
+                                <li><a href="html_tables.html">표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../css/css_index.html">CSS</a></li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>HTML의 기본 태그</h2>
+            
+            <article>
+                <h3>&lt;!-- ... --&gt; : 주석(comment)</h3>
+                
+                <h4>주석으로 처리함</h4>
+                
+                <h4>코드</h4>
+                
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!--가나다라마바사--&gt;
+    &lt;p&gt;ABCDEFG&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_comment.html" class="iframe_html_example"></iframe>
+            </article>
+            
+            <hr>
+
+            <article>
+                <h3>&lt;h1&gt; ~ &lt;h6&gt; : 제목(headings)</h3>
+
+
+                <h4>각 섹션의 제목을 나타냄</h4>
+
+                <p>각 숫자들은 제목의 등급을 나타내며, 숫자가 클수록 높은 등급</p>
+                <p>계층 구조에 맞게 순서대로 작성되어지는것이 좋음</p>
+                <p>원칙적으로 h1요소는 하나의 문서에 한번만 지정하는 것이 좋음</p>
+
+
+
+                <h4>코드</h4>
+
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;제목1&lt;/h1&gt;
+    &lt;h2&gt;제목2&lt;/h2&gt;
+    &lt;h3&gt;제목3&lt;/h3&gt;
+    &lt;h4&gt;제목4&lt;/h4&gt;
+    &lt;h5&gt;제목5&lt;/h5&gt;
+    &lt;h6&gt;제목6&lt;/h6&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+
+
+
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_h1.html" class="iframe_html_example" height="310"></iframe>
+
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>&lt;p&gt; : 단락(paragraphs)</h3>
+
+
+                <h4>텍스트를 단락으로 정의 함</h4>
+
+
+
+                <h4>코드</h4>
+
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;&lt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;문단1&lt;/p&gt;
+    &lt;p&gt;문단2&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+
+
+
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_p.html" class="iframe_html_example"></iframe>
+
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>&lt;hr&gt; : 주제의 분리(horizontal rule)</h3>
+                
+                <h4>문단레벨에서 주제의 분리를 나타냄</h4>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h2&gt;HTML&lt;/h2&gt;
+    &lt;p&gt;HTML : Hypertext Markup Language&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;CSS&lt;/h2&gt;
+    &lt;p&gt;CSS : Cascading Style Sheets&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_hr.html" class="iframe_html_example" height="220"></iframe>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>&lt;br&gt; : 줄바꿈(A forced line-break)</h3>
+
+
+                <h4>새로운 행에서부터 입력이 시작되도록 함</h4>
+
+
+
+                <h4>코드</h4>
+
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    새로운 행에서부터&lt;br&gt;입력이 시작되도록 함
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+
+
+
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_br.html" class="iframe_html_example"></iframe>
+
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>&lt;a href="주소"&gt; &lt;/a&gt; : 링크(anchor)</h3>
+                
+                <h4>하이퍼링크로 설정함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>href</dt>
+                    <dd>href="주소"</dd>
+                    <dd>링크 주소를 지정</dd>
+                    <dd>
+                        <ul>
+                            <li>외부 경로 : &lt;a href="https://www.naver.com/"&gt;</li>
+                            <li>현재 페이지의 같은 폴더에 있는 index.html : &lt;a href="html_1.html&gt;</li>
+                            <li>현재 폴더의 html폴더에 있는 html_2.html : &lt;a href="html/html_2.html&gt;</li>
+                            <li>현재 웹의 루트 폴더에 있는 index.html : &lt;a href="/index.html&gt;</li>
+                            <li>현재 폴더의 상위 폴더에 있는 html_3.html : &lt;a href="../html_3.html&gt;</li>
+                            <li>책갈피 top으로 이동 : &lt;a href="#top&gt;</li>
+                        </ul>
+                    </dd>
+                    
+                    <dt>target</dt>
+                    <dd>target="값"</dd>
+                    <dd>링크를 어떤 프레임에 열것인지 정함</dd>
+                    <dd>
+                        <ul>
+                            <li>_blank : 새창</li>
+                            <li>_parent : 부모창</li>
+                            <li>_self : 자신의 창</li>
+                            <li>_top : 모든 프레임을 지우고 전체 창</li>
+                            <li>프레임이름 : 지정된 프레임</li>
+                        </ul>
+                    </dd>
+                    
+                    <dt>title</dt>
+                    <dd>title="설명"</dd>
+                    <dd>링크에 대한 간단한 설명</dd>
+                    
+                    <dt>id</dt>
+                    <dd>id="값"</dd>
+                    <dd>책갈피 이름을 지정함</dd>
+                    <dd>제목, 부제목 같은것에 지정하여 한번에 이동하는데 씀</dd>
+                    <dd>&lt;h2 id="chapter4"&gt;4번째 주제&lt;/h2&gt;</dd>
+                </dl>
+                
+                <h4>상태 <strong>(CSS에서 처리함)</strong></h4>
+                <p>상태들은 순서대로 정의 해야 의도한 대로 스타일을 적용할 수 있음</p>
+                <dl>
+                    <dt>link</dt>
+                    <dd>기본적인 링크 상태</dd>
+                    
+                    <dt>visited</dt>
+                    <dd>방문한 적이 있는 상태</dd>
+                    
+                    <dt>hover</dt>
+                    <dd>마우스 커서가 링크 위에 올라가 있는 상태</dd>
+                    
+                    <dt>focus</dt>
+                    <dd>링크에 키보드등을 이용해서 포커스가 위치해있는 상태</dd>
+                    
+                    <dt>active</dt>
+                    <dd>마우스를 눌렀다가 놓는 동안의 상태</dd>
+                </dl>
+                
+                <h4>코드</h4>
+                
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;&lt;a href="https://www.naver.com/" title="네이버" target="_blank"&gt;네이버&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="/index.html"&gt;Programming&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_a.html" class="iframe_html_example"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>&lt;img src="주소"&gt; : 이미지(images)</h3>
+                
+                <h4>이미지를 넣음</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>alt</dt>
+                    <dd>alt="텍스트"</dd>
+                    <dd>이미지가 정상적으로 나오지 않을 때 대체되는 텍스트</dd>
+                    
+                    <dt>title</dt>
+                    <dd>title="텍스트"</dd>
+                    <dd>이미지 파일에 마우스를 올리면 나오는 도움말의 내용</dd>
+                    
+                    <dt>width, height</dt>
+                    <dd>width="값", height="값"</dd>
+                    <dd>폭, 높이를 지정함</dd>
+                    <dd><p><strong>직접 속성값으로 주는 것보단 style 속성안에 지정해주는 것이 좋음</strong></p>
+                        <p>style 속성안에 지정해주면 CSS로 크기를 변경해도 영향을 받지 않음</p>
+                        <p>style="width: 값; height: 값;"</p>
+                       </dd>
+                </dl>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+    &lt;style&gt;
+        img {
+            height: 200px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;img src="image.png" alt="TF2 로고" title="TF2 로고" style="width: 100px; height: 100px;"&gt;
+    &lt;img src="image.png" alt="TF2 로고" title="TF2 로고" width="100"&gt;
+    &lt;img src="wrongname.jpg" alt="대체 텍스트"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/basic_tag/ex_img.html" class="iframe_html_example" height="250"></iframe>
+            </article>
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>

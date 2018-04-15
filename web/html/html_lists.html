@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="html_lists.html">목록</a></li>
+                                <li><a href="html_tables.html">표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../css/css_index.html">CSS</a></li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>목록</h2>
+
+            <article>
+                <h3>&lt;ul&gt;&lt;/ul&gt; : 순서 없는 목록(unordered list</h3>
+
+                <h4>순서 없는 목록을 나타냄</h4>
+                
+                <p>각각의 목록 아이템은 &lt;li&gt;&lt;/li&gt; 태그로 감싸줌</p>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;사과&lt;/li&gt;
+        &lt;li&gt;배&lt;/li&gt;
+        &lt;li&gt;포도&lt;/li&gt;
+        &lt;li&gt;오렌지&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+
+
+                <h4>결과</h4>
+                <iframe src="example/lists/ex_ul.html" class="iframe_html_example"></iframe>
+
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>&lt;ol&gt;&lt;/ol&gt; : 순서 있는 목록(ordered list)</h3>
+                
+                <h4>순서 있는 목록을 나타냄</h4>
+                
+                <p>각각의 목록 아이템은 &lt;li&gt;&lt;/li&gt; 태그로 감싸줌</p>
+                
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>start</dt>
+                    <dd>start="값"</dd>
+                    <dd>특정 값부터 순서를 매길수 있음</dd>
+                </dl>
+                
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ol&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;ol start="11"&gt;
+        &lt;li&gt;김XX&lt;/li&gt;
+        &lt;li&gt;박XX&lt;/li&gt;
+        &lt;li&gt;오XX&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/lists/ex_ol.html" class="iframe_html_example" height="180"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>&lt;dl&gt;&lt;/dl&gt; : 설명 목록(description list)</h3>
+                
+                <h4>용어를 설명하는 목록을 나타냄</h4>
+                
+                <dl>
+                    <dt>&lt;dl&gt;&lt;/dl&gt;</dt>
+                    <dd>설명 목록 정의</dd>
+                    
+                    <dt>&lt;dt&gt;&lt;/dt&gt;</dt>
+                    <dd>용어 정의</dd>
+                    
+                    <dt>&lt;dd&gt;&lt;/dd&gt;</dt>
+                    <dd>각각의 용어의 설명</dd>
+                </dl>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;&amp;lt;dl&amp;gt;&amp;lt;/dl&amp;gt;&lt;/dt&gt;
+        &lt;dd&gt;설명 목록 정의&lt;/dd&gt;
+
+        &lt;dt&gt;&amp;lt;dt&amp;gt;&amp;lt;/dt&amp;gt;&lt;/dt&gt;
+        &lt;dd&gt;용어 정의&lt;/dd&gt;
+
+        &lt;dt&gt;&amp;lt;dd&amp;gt;&amp;lt;/dd&amp;gt;&lt;/dt&gt;
+        &lt;dd&gt;각각의 용어의 설명&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/lists/ex_dl.html" class="iframe_html_example" height="160"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>하위 목록 생성</h3>
+                
+                <h4>특정 목록 아이템의 하위에 목록을 만들 수 있음</h4>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;과일
+            &lt;ol&gt;
+                &lt;li&gt;수박&lt;/li&gt;
+                &lt;li&gt;복숭아&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;채소
+            &lt;ol&gt;
+                &lt;li&gt;양파&lt;/li&gt;
+                &lt;li&gt;고추&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/lists/ex_nested.html" class="iframe_html_example" height="160"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article><h3>참고 : <a href="https://www.w3schools.com/html/html_lists.asp" target="_blank">w3schools Lists</a></h3></article>
+
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>

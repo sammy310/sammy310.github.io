@@ -17,7 +17,6 @@ header {
     border-bottom: 1px solid black;
     text-align: center;
     padding: 2rem;
-    
     background-color: rgba(80, 120, 190, 0.8);
 }
 
@@ -26,9 +25,47 @@ header {
     padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    
     background-color: rgba(180, 160, 200, 0.8);
+    flex-basis: 16rem;
+    flex-shrink: 0;
 }
+
+.nav > ul {
+    border: 2px solid black;
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    background-color: lightsteelblue;
+}
+
+.nav ul ul {
+    font-size: 1rem;
+    list-style-type: disc;
+    color: gray;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+.nav ul ul a {
+    color: darkslategray;
+}
+
+a:hover {
+    color: orange;
+    text-decoration-line: underline;
+}
+
+.nav ul ul a:hover {
+    color: orange;
+}
+
 
 main {
     padding: 0.8rem;
@@ -65,6 +102,8 @@ h4 {
     font-size: 1.1rem;
 }
 
+
+
 article {
     border: 1px solid black;
     padding: 2.5rem;
@@ -83,43 +122,39 @@ pre {
     line-height: 1.3;
 }
 
+.iframe_html_example {
+    width: 100%;
+    background-color: white;
+    border-style: none;
+    border: 1px solid black;
+}
 
 
-
-.nav > ul {
-    border: 2px solid black;
-    font-size: 1.2rem;
-    list-style-type: none;
-    padding: 1.3rem;
-    padding-top: 1rem;
+dl {
     padding-bottom: 1rem;
-    border-radius: 0.5rem;
-    background-color: lightsteelblue;
 }
 
-.nav ul ul {
-    font-size: 1rem;
-    list-style-type: disc;
-    color: gray;
+dt {
+    font-size: 1.1rem;
+    color: tomato;
+    margin-bottom: 0.2rem;
+    padding-top: 1rem;
 }
 
-a {
-    color: black;
-    font-weight: bold;
-    text-decoration-line: none;
-}
-a:hover {
-    color: orange;
-    text-decoration-line: underline;
+dt:first-child {
+    padding-top: 0;
 }
 
-.nav ul ul a {
-    color: darkslategray;
+dl dl {
+    margin: 0;
 }
 
-.nav ul ul a:hover {
+dl dl dt {
     color: orange;
 }
+
+
+
 
 
 .scroll_button {

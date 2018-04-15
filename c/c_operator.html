@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Programming</title>
     <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
     <meta name="description" content="프로그래밍 관련 정보들">
@@ -11,11 +12,9 @@
 </head>
 
 <body>
-    <div id="top"></div>
+    <div id="scroll_top"></div>
     <header>
-        <nav>
-            <h1><a href="../index.html">Programming</a></h1>
-        </nav>
+        <h1><a href="../index.html">Programming</a></h1>
     </header>
 
     <section>
@@ -38,7 +37,14 @@
                 <li>
                     <a href="../web/web.html">웹</a>
                     <ul>
-                        <li><a href="../web/html/html_index.html">HTML</a></li>
+                        <li><a href="../web/html/html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="../web/html/html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="../web/html/html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="../web/html/html_lists.html">목록</a></li>
+                                <li><a href="../web/html/html_tables.html">표</a></li>
+                            </ul>
+                        </li>
                         <li><a href="../web/css/css_index.html">CSS</a></li>
                         <li><a href="../web/javascript/javascript_index.html">JavaScript</a></li>
                     </ul>
@@ -52,63 +58,48 @@
             <article>
                 <h3>이항 연산자 : 두 개의 피연산자를 요구함</h3>
 
-                <ul>
-                    <p>
-                        <li>
-                            <h4>대입 연산자</h4>
-                        </li>
-                        <ul>
-                            <li>
-                                =<br> 연산자 오른쪽에 있는 값을 연산자 왼쪽에 있는 변수에 대입함<br>
-                                <pre><code>
-number = 10;
-                                </code></pre>
-                            </li>
-                        </ul>
-                    </p>
 
-                    <p>
-                        <li>
-                            <h4>산술 연산자</h4>
-                        </li>
-                        <ul>
-                            <li>
-                                +<br> 두 피연산자의 값을 더함<br>
-                                <pre><code>
+                <h4>대입 연산자</h4>
+                <dl>
+                    <dt>=</dt>
+                    <dd>연산자 오른쪽에 있는 값을 연산자 왼쪽에 있는 변수에 대입함</dd>
+                    <pre><code>
+number = 10;
+                                    </code></pre>
+                </dl>
+
+                <h4>산술 연산자</h4>
+                <dl>
+                    <dt>+</dt>
+                    <dd>두 피연산자의 값을 더함</dd>
+                    <pre><code>
 number = 10 + 30;
                                 </code></pre>
-                            </li>
 
-                            <li>
-                                -<br> 왼쪽의 피연산자 값에서 오른쪽의 피연산자 값을 뺌<br>
-                                <pre><code>
+                    <dt>-</dt>
+                    <dd>왼쪽의 피연산자 값에서 오른쪽의 피연산자 값을 뺌</dd>
+                    <pre><code>
 number = 20 - 10;
                                 </code></pre>
-                            </li>
 
-                            <li>
-                                *<br> 두 피연산자의 값을 곱함<br>
-                                <pre><code>
+                    <dt>*</dt>
+                    <dd>두 피연산자의 값을 곱함</dd>
+                    <pre><code>
 number = 5 * 20;
                                 </code></pre>
-                            </li>
 
-                            <li>
-                                /<br> 왼쪽의 피연산자 값을 오른쪽의 피연산자 값으로 나눔<br>
-                                <pre><code>
+                    <dt>/</dt>
+                    <dd>왼쪽의 피연산자 값을 오른쪽의 피연산자 값으로 나눔</dd>
+                    <pre><code>
 number = 100 / 5;
                                 </code></pre>
-                            </li>
 
-                            <li>
-                                %<br> 왼쪽의 피연산자 값을 오른쪽의 피연산자 값으로 나눴을 때의 나머지를 반환<br>
-                                <pre><code>
+                    <dt>%</dt>
+                    <dd>왼쪽의 피연산자 값을 오른쪽의 피연산자 값으로 나눴을 때의 나머지를 반환</dd>
+                    <pre><code>
 number = 10 % 3;
                                 </code></pre>
-                            </li>
-                        </ul>
-                    </p>
-                </ul>
+                </dl>
             </article>
 
             <hr>
@@ -116,33 +107,15 @@ number = 10 % 3;
             <article>
                 <h3>증가, 감소 연산자 : 변수에 저장된 값을 1 증가, 감소 시킴</h3>
 
-                <ul>
-                    <li>
-                        ++<br>
-                        <ul>
-                            <li>
-                                ++number<br>
-                            </li>
+                <dl>
+                    <dt>++</dt>
+                    <dd>++number</dd>
+                    <dd>number++</dd>
 
-                            <li>
-                                number++<br>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        --<br>
-                        <ul>
-                            <li>
-                                --number<br>
-                            </li>
-
-                            <li>
-                                number--<br>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                    <dt>--</dt>
+                    <dd>--number</dd>
+                    <dd>number--</dd>
+                </dl>
             </article>
 
             <hr>
@@ -150,31 +123,19 @@ number = 10 % 3;
             <article>
                 <h3>관계 연산자 : 대소와 동등의 관계를 따짐</h3>
 
-                <ul>
-                    <li>
-                        <<br>
-                    </li>
+                <dl>
+                    <dt>&lt;</dt>
 
-                    <li>
-                        ><br>
-                    </li>
+                    <dt>&gt;</dt>
 
-                    <li>
-                        ==<br>
-                    </li>
+                    <dt>==</dt>
 
-                    <li>
-                        !=<br>
-                    </li>
+                    <dt>!=</dt>
 
-                    <li>
-                        <=<br>
-                    </li>
+                    <dt>&lt;=</dt>
 
-                    <li>
-                        >=<br>
-                    </li>
-                </ul>
+                    <dt>&gt;=</dt>
+                </dl>
             </article>
 
             <hr>
@@ -182,19 +143,13 @@ number = 10 % 3;
             <article>
                 <h3>논리 연산자 : AND, OR, NOT</h3>
 
-                <ul>
-                    <li>
-                        &&<br>
-                    </li>
+                <dl>
+                    <dt>&amp;&amp;</dt>
 
-                    <li>
-                        ||<br>
-                    </li>
+                    <dt>||</dt>
 
-                    <li>
-                        !<br>
-                    </li>
-                </ul>
+                    <dt>!</dt>
+                </dl>
             </article>
 
             <hr>
@@ -202,31 +157,19 @@ number = 10 % 3;
             <article>
                 <h3>비트 연산자 : 비트 단위로 연산을 함</h3>
 
-                <ul>
-                    <li>
-                        &<br>
-                    </li>
+                <dl>
+                    <dt>&amp;</dt>
 
-                    <li>
-                        |<br>
-                    </li>
+                    <dt>|</dt>
 
-                    <li>
-                        ^<br>
-                    </li>
+                    <dt>^</dt>
 
-                    <li>
-                        ~<br>
-                    </li>
+                    <dt>~</dt>
 
-                    <li>
-                        <<<br>
-                    </li>
+                    <dt>&lt;&lt;</dt>
 
-                    <li>
-                        >><br>
-                    </li>
-                </ul>
+                    <dt>&gt;&gt;</dt>
+                </dl>
             </article>
 
             <hr>
@@ -234,47 +177,27 @@ number = 10 % 3;
             <article>
                 <h3>복합 대입 연산자 : 다른 연산자와 합쳐진 형태의 대입 연산자</h3>
 
-                <ul>
-                    <li>
-                        +=<br>
-                    </li>
+                <dl>
+                    <dt>+=</dt>
 
-                    <li>
-                        -=<br>
-                    </li>
+                    <dt>-=</dt>
 
-                    <li>
-                        *=<br>
-                    </li>
+                    <dt>*=</dt>
 
-                    <li>
-                        /=<br>
-                    </li>
+                    <dt>/=</dt>
 
-                    <li>
-                        %=<br>
-                    </li>
+                    <dt>%=</dt>
 
-                    <li>
-                        <<=<br>
-                    </li>
+                    <dt>&lt;&lt;=</dt>
 
-                    <li>
-                        >>=<br>
-                    </li>
+                    <dt>&gt;&gt;=</dt>
 
-                    <li>
-                        &=<br>
-                    </li>
+                    <dt>&amp;=</dt>
 
-                    <li>
-                        |=<br>
-                    </li>
+                    <dt>|=</dt>
 
-                    <li>
-                        ^=<br>
-                    </li>
-                </ul>
+                    <dt>^=</dt>
+                </dl>
             </article>
 
             <hr>
@@ -282,22 +205,20 @@ number = 10 % 3;
             <article>
                 <h3>콤마 연산자 : 둘 이상의 변수를 동시에 선언하거나, 둘 이상의 문장을 한 행에 삽입하는 경우에 사용</h3>
 
-                <ul>
-                    <li>
-                        ,<br>
-                    </li>
-                </ul>
+                <dl>
+                    <dt>,</dt>
+                </dl>
             </article>
         </main>
     </section>
 
-    <footer id="footer">
-        
+    <footer id="scroll_footer">
+
     </footer>
-    
+
     <div class="scroll_button">
-        <a href="#top" class="scroll_button_top">↑</a>
-        <a href="#footer" class="scroll_button_footer">↓</a>
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
     </div>
 </body>
 

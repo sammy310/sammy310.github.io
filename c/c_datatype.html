@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Programming</title>
     <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
     <meta name="description" content="프로그래밍 관련 정보들">
@@ -11,11 +12,9 @@
 </head>
 
 <body>
-    <div id="top"></div>
+    <div id="scroll_top"></div>
     <header>
-        <nav>
-            <h1><a href="../index.html">Programming</a></h1>
-        </nav>
+        <h1><a href="../index.html">Programming</a></h1>
     </header>
 
     <section>
@@ -38,7 +37,14 @@
                 <li>
                     <a href="../web/web.html">웹</a>
                     <ul>
-                        <li><a href="../web/html/html_index.html">HTML</a></li>
+                        <li><a href="../web/html/html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="../web/html/html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="../web/html/html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="../web/html/html_lists.html">목록</a></li>
+                                <li><a href="../web/html/html_tables.html">표</a></li>
+                            </ul>
+                        </li>
                         <li><a href="../web/css/css_index.html">CSS</a></li>
                         <li><a href="../web/javascript/javascript_index.html">JavaScript</a></li>
                     </ul>
@@ -49,38 +55,48 @@
         <main>
             <h2>자료형</h2>
 
-            <p>
-                <h4>자료형 : 데이터를 표현하는 방법</h4>
-            </p>
+
+            <h4>자료형 : 데이터를 표현하는 방법</h4>
 
             <hr>
 
             <article>
                 <h3>정수형</h3>
 
-                <ul>
-                    <li>
-                        char<br> 1바이트 = 2<sup>8</sup><br> -128 ~ 127<br>
-                    </li>
 
-                    <li>
-                        short<br> 2바이트 = 2<sup>16</sup><br> -32,768 ~ 32,767<br>
-                    </li>
+                <dl>
+                    <dt>char</dt>
+                    <dd>바이트 = 2<sup>8</sup></dd>
+                    <dd>-128 ~ 127</dd>
+                </dl>
 
-                    <li>
-                        int<br> 4바이트 = 2<sup></sup>32 -2,147,483,648 ~ 2,147,483,647<br>
-                    </li>
+                <dl>
+                    <dt>short</dt>
+                    <dd>2바이트 = 2<sup>16</sup></dd>
+                    <dd>-32,768 ~ 32,767</dd>
+                </dl>
 
-                    <li>
-                        long<br> 4바이트 = 2<sup>32</sup><br> -2,147,483,648 ~ 2,147,483,647<br>
-                    </li>
+                <dl>
+                    <dt>int</dt>
+                    <dd>4바이트 = 2<sup>32</sup></dd>
+                    <dd>-2,147,483,648 ~ 2,147,483,647</dd>
+                </dl>
 
-                    <li>
-                        long long<br> 8바이트 = 2<sup>64</sup><br> -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807<br>
-                    </li>
-                </ul>
+                <dl>
+                    <dt>long</dt>
+                    <dd>4바이트 = 2<sup>32</sup></dd>
+                    <dd>-2,147,483,648 ~ 2,147,483,647</dd>
+                </dl>
 
-                정수 자료형 앞에 unsigned를 붙이면 0이상의 정수만 표현됨<br> ex) unsigned int = 0 ~ (2,147,483,648 + 2,147,483,647)<br>
+                <dl>
+                    <dt>long long</dt>
+                    <dd>8바이트 = 2<sup>64</sup></dd>
+                    <dd>-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807</dd>
+                </dl>
+
+
+                <p>정수 자료형 앞에 unsigned를 붙이면 0이상의 정수만 표현됨</p>
+                <p>ex) unsigned int = 0 ~ (2,147,483,648 + 2,147,483,647)</p>
             </article>
 
             <hr>
@@ -88,35 +104,36 @@
             <article>
                 <h3>실수형</h3>
 
-                <ul>
-                    <li>
-                        float<br> 4바이트
-                        <br> ±3.4×10
-                        <sup>-37</sup> ~ ±3.4×10<sup>38</sup><br>
-                    </li>
 
-                    <li>
-                        double<br> 8바이트
-                        <br> ±1.7×10
-                        <sup>-307</sup> ~ ±1.7×10<sup>308</sup>
-                    </li>
+                <dl>
+                    <dt>float</dt>
+                    <dd>4바이트</dd>
+                    <dd>±3.4×10<sup>-37</sup> ~ ±3.4×10<sup>38</sup></dd>
+                </dl>
 
-                    <li>
-                        long double<br> 8바이트 이상<br>
-                    </li>
-                </ul>
+                <dl>
+                    <dt>double</dt>
+                    <dd>8바이트</dd>
+                    <dd>±1.7×10<sup>-307</sup> ~ ±1.7×10<sup>308</sup></dd>
+                </dl>
+
+                <dl>
+                    <dt>long double</dt>
+                    <dd>8바이트 이상</dd>
+                </dl>
+
             </article>
 
         </main>
     </section>
-    
-    <footer id="footer">
-        
+
+    <footer id="scroll_footer">
+
     </footer>
-    
+
     <div class="scroll_button">
-        <a href="#top" class="scroll_button_top">↑</a>
-        <a href="#footer" class="scroll_button_footer">↓</a>
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
     </div>
 </body>
 
