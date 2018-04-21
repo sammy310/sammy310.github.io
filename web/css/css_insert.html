@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="../html/html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="../html/html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="../html/html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="../html/html_lists.html">목록</a></li>
+                                <li><a href="../html/html_tables.html">표</a></li>
+                                <li><a href="../html/html_forms.html">입력양식</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="css_index.html">CSS</a>
+                            <ul>
+                                <li><a href="css_insert.html">CSS 추가하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>CSS 추가방법</h2>
+
+            <h4></h4>
+            
+            <hr>
+            
+            <article>
+                <h3>캐스케이팅</h3>
+                
+                <h4>CSS가 적용되는 우선순위가 있음</h4>
+                
+                <ol>
+                    <li>인라인 스타일</li>
+                    <li>내부, 외부 스타일 시트</li>
+                    <li>브라우저 기본값</li>
+                </ol>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>인라인 스타일</h3>
+                
+                <h4>태그 내부에 스타일을 설정함</h4>
+                
+                <p>인라인 스타일은 스타일 시트의 많은 장점을 상실시킴</p>
+                <p>되도록이면 인라인 스타일은 쓰지 않는 것이 좋음</p>
+                
+                <h4>구문</h4>
+                <pre><code>
+&lt;태그 style="속성1: 값; 속성2: 값;"&gt;
+                </code></pre>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1 style="color: aquamarine; background-color: coral; padding: 30px;"&gt;Heading&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/insert/ex_inline.html" class="iframe_html_example"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>내부 스타일 시트</h3>
+                
+                <h4>한 페이지에 고유한 스타일을 설정함</h4>
+                
+                <p>내부 스타일은 HTML의 &lt;head&gt; 섹션 내부의 &lt;style&gt; 태그 내에서 정의됨</p>
+                
+                <h4>구문</h4>
+                <pre><code>
+&lt;head&gt;
+    &lt;style&gt;
+        선택자 {
+            속성: 값;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+                </code></pre>
+                
+                <h4>코드</h4>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;style&gt;
+        body {
+            background-color: darkorange;
+        }
+        
+        h1 {
+            color: aqua;
+            margin: 3rem;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/insert/ex_internal.html" class="iframe_html_example"></iframe>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>외부 스타일 시트</h3>
+                
+                <h4>.css 확장자 파일을 사용하여 페이지에 스타일을 적용함</h4>
+                
+                <p>외부 스타일은 HTML의 &lt;head&gt; 섹션 내부에서 &lt;link&gt; 태그를 사용하여 설정함</p>
+                <p>외부 스타일은 한 개의 파일만으로 전체 웹패이지의 스타일을 바꿀 수 있어 유지보수가 아주 편함</p>
+                <p><strong>외부 스타일을 사용을 권장함</strong></p>
+                
+                <h4>구문</h4>
+                
+                <h5>HTML</h5>
+                <pre><code>
+&lt;!-- HTML에 외부 스타일 시트 적용 --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="파일명.css"&gt;
+&lt;/head&gt;
+                </code></pre>
+                
+                <h5>CSS</h5>
+                <pre><code>
+/* CSS 코드 */
+선택자 {
+    속성: 값;
+}
+                </code></pre>
+                
+                
+                <h4>코드</h4>
+                
+                <h5>HTML</h5>
+                <pre><code>
+&lt;!-- HTML 코드 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Heading&lt;/h1&gt;
+    
+    &lt;p&gt;가나다&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h5>CSS</h5>
+                <pre><code>
+/* style.css */
+body {
+    background-color: burlywood;
+}
+
+h1 {
+    color: aquamarine;
+}
+
+p {
+    color: darkcyan;
+    background-color: beige;
+    font-size: 1.3rem;
+}
+                </code></pre>
+                
+                <h4>결과</h4>
+                <iframe src="example/insert/ex_external.html" class="iframe_html_example"></iframe>
+            </article>
+            
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+/* style.css */
+body {
+    background-color: burlywood;
+}
+
+h1 {
+    color: aquamarine;
+}
+
+p {
+    color: darkcyan;
+    background-color: beige;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="../html/html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="../html/html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="../html/html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="../html/html_lists.html">목록</a></li>
+                                <li><a href="../html/html_tables.html">표</a></li>
+                                <li><a href="../html/html_forms.html">입력양식</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="css_index.html">CSS</a>
+                            <ul>
+                                <li><a href="css_insert.html">CSS 추가하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>CSS</h2>
+
+            <h4>CSS(Cascading Style Sheets) : 웹페이지를 꾸미는 언어</h4>
+            
+            <hr>
+            
+            <h2>CSS 구문</h2>
+            
+            <article>
+                <h3>CSS 구문</h3>
+                
+                <pre><code>
+선택자 {
+    속성: 값; 속성: 값;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>/* ... */ : 주석(comment)</h3>
+                
+                <h4>주석으로 처리함</h4>
+                
+                <pre><code>
+/* 이 부분은 주석처리 됨 */
+p {
+    color: aqua;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <h2>선택자</h2>
+            
+            <h4>HTML 요소를 태그 이름, id값, 클래스, 특성 등에 따라 찾거나 선택하는데에 사용됨</h4>
+            
+            <article>
+                <h3>태그 선택자</h3>
+                
+                <h4>태그 이름을 기반으로 함</h4>
+                
+                <pre><code>
+태그이름 {
+    속성: 값;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>id 선택자</h3>
+                
+                <h4>HTML의 id 속성의 값을 사용함</h4>
+                
+                <p>'#' 다음에 id값을 붙여서 사용</p>
+                
+                <pre><code>
+#id값 {
+    속성: 값;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>클래스 선택자</h3>
+                
+                <h4>HTML의 class 속성의 값을 사용함</h4>
+                
+                <p>'.' 다음에 class값을 붙여서 사용</p>
+                
+                <pre><code>
+.class값 {
+    속성: 값;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3>그룹화 선택자</h3>
+                
+                <h4>중복되는 스타일 정의가 있으면 그룹화 할 수 있음</h4>
+                
+                <p>','를 사용하여 선택자를 구분해줌</p>
+                
+                <pre><code>
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+h3 {
+    text-align: center;
+    color: blue;
+}
+
+p {
+    text-align: center;
+    color: blue;
+}
+                </code></pre>
+                
+                <h5>그룹화</h5>
+                
+                <pre><code>
+h1, h3, p {
+    text-align: center;
+    color: blue;
+}
+                </code></pre>
+            </article>
+            
+            <hr>
+            
+            <article><h3>선택자 참고 : <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">w3schools CSS Selectors</a></h3></article>
+            <article><h3>선택자 연습 : <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a></h3></article>
+            
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>
