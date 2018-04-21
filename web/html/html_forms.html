@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../../main.css">
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <header>
+        <h1><a href="../../index.html">Programming</a></h1>
+    </header>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../../c/c_variable.html">변수</a></li>
+                        <li><a href="../../c/c_operator.html">연산자</a></li>
+                        <li><a href="../../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web.html">웹</a>
+                    <ul>
+                        <li><a href="html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="html_lists.html">목록</a></li>
+                                <li><a href="html_tables.html">표</a></li>
+                                <li><a href="html_forms.html">입력양식</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../css/css_index.html">CSS</a></li>
+                        <li><a href="../javascript/javascript_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main>
+            <h2>입력양식</h2>
+
+            <article>
+                <h3>&lt;form&gt;&lt;/form&gt; : 입력양식</h3>
+                
+                <h4>입력양식을 정의함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>action</dt>
+                    <dd>action="주소"</dd>
+                    <dd>form 데이터를 보낼 주소를 지정함</dd>
+                    
+                    <dt>target</dt>
+                    <dd>target="속성"</dd>
+                    <dd>데이터를 제출한 후 응답을 표시할 위치를 정함</dd>
+                    <dd>
+                        <h5>속성</h5>
+                        <dl>
+                            <dt>_blank</dt>
+                            <dd>새창</dd>
+                            
+                            <dt>_parent</dt>
+                            <dd>부모창</dd>
+                            
+                            <dt>_self</dt>
+                            <dd>자신의 창</dd>
+                            
+                            <dt>_top</dt>
+                            <dd>모든 프레임을 지우고 전체 창</dd>
+                            
+                            <dt>프레임이름</dt>
+                            <dd>지정된 프레임</dd>
+                        </dl>
+                    </dd>
+                    
+                    <dt>method</dt>
+                    <dd>method="속성"</dd>
+                    <dd>form 데이터를 보낼 방법을 지정함</dd>
+                    <dd>
+                        <h5>속성</h5>
+                        <dl>
+                            <dt>get</dt>
+                            <dd>기본값</dd>
+                            <dd>URL?name=value&amp;name=value 형식으로 전달함</dd>
+                            
+                            <dt>post</dt>
+                            <dd>HTTP post transaction 형식으로 전달</dd>
+                            <dd>주소창에 데이터가 보이지 않음</dd>
+                        </dl>
+                    </dd>
+                    
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>form의 이름을 정의함</dd>
+                </dl>
+                
+                <h4>요소</h4>
+                <dl>
+                    <dt><a href="#input">&lt;input&gt;&lt;/input&gt;</a></dt>
+                    
+                    <dt><a href="#textarea">&lt;textarea&gt;&lt;/textarea&gt;</a></dt>
+                    
+                    <dt><a href="#button">&lt;button&gt;&lt;/button&gt;</a></dt>
+                    
+                    <dt><a href="#select">&lt;select&gt;&lt;/select&gt;</a></dt>
+                    
+                    <dt><a href="#option">&lt;option&gt;&lt;/option&gt;</a></dt>
+                    
+                    <dt><a href="#optgroup">&lt;optgroup&gt;&lt;/optgroup&gt;</a></dt>
+                    
+                    <dt><a href="#fieldset">&lt;fieldset&gt;&lt;/fieldset&gt;</a></dt>
+                    
+                    <dt><a href="#legend">&lt;legend&gt;&lt;/legend&gt;</a></dt>
+                    
+                    <dt><a href="#label">&lt;label&gt;&lt;/label&gt;</a></dt>
+                    
+                    <dt><a href="#datalist">&lt;datalist&gt;&lt;/datalist&gt;</a></dt>
+                    
+                    <dt><a href="#output">&lt;output&gt;&lt;/output&gt;</a></dt>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="input">&lt;input&gt;&lt;/input&gt;</h3>
+                
+                <h4>사용자가 입력할 수 있는 입력 창을 정의함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt><a href="#input_type">type</a></dt>
+                    <dd>type="속성"</dd>
+                    <dd>표시할 입력 요소를 지정함</dd>
+                    
+                    <dt>list</dt>
+                    <dd>list="값"</dd>
+                    <dd>미리 정의된 옵션을 포함하는 <a href="#datalist">datalist</a> 태그를 참조함</dd>
+                    
+                    
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>input 태그의 이름을 지정함</dd>
+                    
+                    <dt>value</dt>
+                    <dd>value="값"</dd>
+                    <dd>input 태그의 값을 지정함</dd>
+                    <dd>
+                        <ul>
+                            <li>"text", "password", "hidden"</li>
+                            : 입력창의 기본 값
+                            <li>"button", "reset", "submit"</li>
+                            : 버튼안의 글자
+                            <li>"checkbox", "radio", "image"</li>
+                            : 제출시 전송되는 값
+                            <li>"file"</li>
+                            : 쓸 수 없음
+                        </ul>
+                    </dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                    
+                    <dt>size</dt>
+                    <dd>size="값"</dd>
+                    <dd>폭을 지정함</dd>
+                    <dd>"text", "password", "search", "tel", "url", "email"과 함께 사용됨</dd>
+                    
+                    <dt>max</dt>
+                    <dd>max="값"</dd>
+                    <dd>최댓값을 지정함</dd>
+                    
+                    <dt>min</dt>
+                    <dd>min="값"</dd>
+                    <dd>최솟값을 지정함</dd>
+                    
+                    <dt>maxlength</dt>
+                    <dd>maxlength="값"</dd>
+                    <dd>최대 입력 문자 수를 지정함</dd>
+                    
+                    <dt>multiple</dt>
+                    <dd>multiple(bool형)</dd>
+                    <dd>복수선택 가능하도록 지정</dd>
+                    
+                    <dt>autofocus</dt>
+                    <dd>autofocus(bool형)</dd>
+                    <dd>페이지가 열렸을 때 현재의 input 태그를 가르킴</dd>
+                    
+                    <dt>required</dt>
+                    <dd>required(bool형)</dd>
+                    <dd>필수요소인지 결정함(제출하기 전에 이 영역이 채워져 있어야 함)</dd>
+                    <dd>"text", "password", "search", "url", "tel", "email", "date pickers", "number", "checkbox", "radio", "file"과 함께 사용됨</dd>
+                    
+                    <dt>pattern</dt>
+                    <dd>pattern="정규 표현식"</dd>
+                    <dd>정규 표현식(regular expression)으로 표현된 패턴을 지정함</dd>
+                    <dd>"text", "date", "search", "url", "tel", "email", "password"과 함께 사용됨</dd>
+                    <dd>참고 : <a href="https://www.w3schools.com/tags/att_input_pattern.asp">w3schools input pattern</a></dd>
+                    
+                    <dt>placeholder</dt>
+                    <dd>placeholer="값"</dd>
+                    <dd>입력 영역에 짧은 힌트나 예상 값을 표시함</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>입력 영역을 비활성화 함(데이터도 전송되지 않음)</dd>
+                    
+                    <dt>readonly</dt>
+                    <dd>readonly(bool형)</dd>
+                    <dd>읽기 전용으로 지정</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="input_type">&lt;input type="속성"&gt;&lt;/input&gt;</h3>
+                
+                <h4>표시할 입력 요소를 정의함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>text</dt>
+                    <dd>기본값</dd>
+                    <dd>단일행, 텍스트 입력</dd>
+
+                    <dt>password</dt>
+                    <dd>비밀번호 입력(입력한 내용은 감춰짐)</dd>
+
+                    <dt>checkbox</dt>
+                    <dd>체크박스</dd>
+
+                    <dt>radio</dt>
+                    <dd>라디오버튼</dd>
+
+                    <dt>submit</dt>
+                    <dd>제출버튼</dd>
+
+                    <dt>reset</dt>
+                    <dd>리셋버튼</dd>
+
+                    <dt>button</dt>
+                    <dd>클릭할 수 있는 버튼</dd>
+                    <dd>주로 JavaScript와 함께 스크립트를 사용할 때 쓰임</dd>
+
+                    <dt>search</dt>
+                    <dd>검색할 문장</dd>
+
+                    <dt>number</dt>
+                    <dd>숫자 입력</dd>
+
+                    <dt>range</dt>
+                    <dd>정확한 값이 중요하지 않은 숫자</dd>
+
+                    <dt>color</dt>
+                    <dd>색상 선택</dd>
+
+                    <dt>date</dt>
+                    <dd>날짜 선택(년, 월, 일)</dd>
+
+                    <dt>datetime-local</dt>
+                    <dd>날짜, 시간 선택(년, 월, 일, 시, 분, 초)</dd>
+
+                    <dt>month</dt>
+                    <dd>월, 년</dd>
+
+                    <dt>week</dt>
+                    <dd>주, 년</dd>
+
+                    <dt>time</dt>
+                    <dd>시간</dd>
+
+                    <dt>email</dt>
+                    <dd>이메일 주소</dd>
+                    
+                    <dt>tel</dt>
+                    <dd>핸드폰 번호</dd>
+
+                    <dt>url</dt>
+                    <dd>주소 입력</dd>
+
+                    <dt>image</dt>
+                    <dd>제출 버튼으로 이미지를 지정</dd>
+
+                    <dt>file</dt>
+                    <dd>파일 업로드</dd>
+
+                    <dt>hidden</dt>
+                    <dd>숨겨진 입력창</dd>
+                </dl>
+                
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="textarea">&lt;textarea&gt;&lt;/textarea&gt;</h3>
+                
+                <h4>여러줄의 텍스트를 편집할 수 있는 입력양식을 정의함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>button 태그의 이름을 지정함</dd>
+                    
+                    <dt>dirname</dt>
+                    <dd>dirname="이름(name 태그).dir</dd>
+                    <dd>textarea의 텍스트 방향을 결정함</dd>
+                    
+                    <dt>rows</dt>
+                    <dd>rows="값"</dd>
+                    <dd>textarea에 표시될 행을 지정함</dd>
+                    
+                    <dt>cols</dt>
+                    <dd>cols="값"</dd>
+                    <dd>textarea에 표시될 폭을 지정함</dd>
+                    
+                    <dt>wrap</dt>
+                    <dd>wrap="속성"</dd>
+                    <dd>제출할 때 텍스트 줄바꿈하는 방법을 지정함</dd>
+                    <dd>
+                        <h5>속성</h5>
+                        <dl>
+                            <dt>soft</dt>
+                            <dd>줄바꿈되지 않음(기본값)</dd>
+                            
+                            <dt>hard</dt>
+                            <dd>줄바꿈되도록 사용자 에이전트가 줄바꿈 문자들을 삽입하도록 지정함</dd>
+                        </dl>
+                    </dd>
+                    
+                    <dt>maxlength</dt>
+                    <dd>maxlength="값"</dd>
+                    <dd>최대 입력 문자 수를 지정함</dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                    
+                    <dt>placeholder</dt>
+                    <dd>placeholer="값"</dd>
+                    <dd>입력 영역에 짧은 힌트나 예상 값을 표시함</dd>
+                    
+                    <dt>autofocus</dt>
+                    <dd>autofocus(bool형)</dd>
+                    <dd>페이지가 열렸을 때 현재의 button 태그를 가르킴</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>선택 영역을 비활성화 함(데이터도 전송되지 않음)</dd>
+                    
+                    <dt>required</dt>
+                    <dd>required(bool형)</dd>
+                    <dd>필수요소인지 결정함(제출하기 전에 이 영역이 채워져 있어야 함)</dd>
+                    
+                    <dt>readonly</dt>
+                    <dd>readonly(bool형)</dd>
+                    <dd>읽기 전용으로 지정</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="button">&lt;button&gt;&lt;/button&gt;</h3>
+                
+                <h4>클릭 가능한 버튼을 정의함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>button 태그의 이름을 지정함</dd>
+                    
+                    <dt>value</dt>
+                    <dd>value="값"</dd>
+                    <dd>전송되는 데이터의 초기값을 지정함</dd>
+                    
+                    <dt>type</dt>
+                    <dd>type="속성"</dd>
+                    <dd>버튼의 유형을 지정함</dd>
+                    <dd>
+                        <h5>속성</h5>
+                        <dl>
+                            <dt>submit</dt>
+                            <dd>제출 버튼(기본값)</dd>
+                            
+                            <dt>reset</dt>
+                            <dd>리셋 버튼</dd>
+                            
+                            <dt>button</dt>
+                            <dd>클릭 가능한 버튼(아무것도 하지 않음)</dd>
+                        </dl>
+                    </dd>
+                    
+                    <dt>autofocus</dt>
+                    <dd>autofocus(bool형)</dd>
+                    <dd>페이지가 열렸을 때 현재의 button 태그를 가르킴</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>선택 영역을 비활성화 함(데이터도 전송되지 않음)</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="select">&lt;select&gt;&lt;/select&gt;</h3>
+                
+                <h4>선택 목록을 생성함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>select 태그의 이름을 지정함</dd>
+                    
+                    <dt>size</dt>
+                    <dd>size="값"</dd>
+                    <dd>선택 목록의 갯수를 지정함</dd>
+                    
+                    <dt>autofocus</dt>
+                    <dd>autofocus(bool형)</dd>
+                    <dd>페이지가 열렸을 때 현재의 input 태그를 가르킴</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>선택 영역을 비활성화 함(데이터도 전송되지 않음)</dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                    
+                    <dt>multiple</dt>
+                    <dd>multiple(bool형)</dd>
+                    <dd>복수선택 가능하도록 지정함</dd>
+                    
+                    <dt>required</dt>
+                    <dd>required(bool형)</dd>
+                    <dd>필수요소인지 결정함(제출하기 전에 이 영역이 채워져 있어야 함)</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="option">&lt;option&gt;&lt;/option&gt;</h3>
+                
+                <h4>select 태그의 자식 요소로 각 항목을 정의함</h4>
+                
+                <dl>
+                    <dt>value</dt>
+                    <dd>value="값"</dd>
+                    <dd>서버로 전송되는 값을 지정함</dd>
+                    
+                    <dt>label</dt>
+                    <dd>label="값"</dd>
+                    <dd>라벨을 지정함</dd>
+                    
+                    <dt>selected</dt>
+                    <dd>selected(bool형)</dd>
+                    <dd>미리 선택되게 지정함</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>옵션 요소를 비활성화 함</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="optgroup">&lt;optgroup&gt;&lt;/optgroup&gt;</h3>
+                
+                <h4>select 태그의 자식 요소로 option 태그로 이루어진 항목을 그룹화함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>label</dt>
+                    <dd>label="값"</dd>
+                    <dd>라벨을 지정함</dd>
+                    
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>옵션 그룹의 요소 모두를 비활성화 함</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="fieldset">&lt;fieldset&gt;&lt;/fieldset&gt;</h3>
+                
+                <h4>관련된 요소들을 그룹화 함</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>disabled</dt>
+                    <dd>disabled(bool형)</dd>
+                    <dd>관련 그룹의 요소 모두를 비활성화 함</dd>
+                    
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>fieldset 태그의 이름을 지정함</dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="legend">&lt;legend&gt;&lt;/legend&gt;</h3>
+                
+                <h4>fieldset 태그의 캡션을 지정함</h4>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="label">&lt;label&gt;&lt;/label&gt;</h3>
+                
+                <h4>input 태그에 대한 라벨을 정의함</h4>
+                
+                <p>사용자에게 특별한 것은 아니나, 사용자가 label 태그 내의 텍스트를 클릭하면 입력창으로 토글되기 때문에 마우스 사용자의 유용성이 향상됨</p>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>for</dt>
+                    <dd>for="값"</dd>
+                    <dd>다른 요소의 id값과 같은값을 지정하여 연관시킴</dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                </dl>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="datalist">&lt;datalist&gt;&lt;/datalist&gt;</h3>
+                
+                <h4>input 태그에 대해 미리 정의된 옵션의 목록을 지정함</h4>
+            </article>
+            
+            <hr>
+            
+            <article>
+                <h3 id="output">&lt;output&gt;&lt;/output&gt;</h3>
+                
+                <h4>계산 결과를 나타냄</h4>
+                
+                <h4>속성</h4>
+                <dl>
+                    <dt>for</dt>
+                    <dd>for="값"</dd>
+                    <dd>계산 결과와 계산에 사용된 요소 사이의 관계를 지정함</dd>
+                    
+                    <dt>name</dt>
+                    <dd>name="이름"</dd>
+                    <dd>output 태그의 이름을 지정함</dd>
+                    
+                    <dt>form</dt>
+                    <dd>form="값"</dd>
+                    <dd>한개 이상의 form을 연관시킴</dd>
+                </dl>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>참고 : <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">w3schools Forms</a></h3>
+            </article>
+
+        </main>
+    </section>
+
+
+
+
+
+    <footer id="scroll_footer">
+
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>
