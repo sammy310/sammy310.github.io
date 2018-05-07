@@ -5,8 +5,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin: 0;
 }
 
 section, footer{
@@ -82,26 +81,33 @@ footer {
     margin-bottom: 10rem;
 }
 
+.nav_github {
+    font-size: 3rem;
+    color: rgb(220, 220, 150);
+    padding-top: 1rem;
+    padding-left: 3rem;
+}
+
 h1 {
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     
 }
 
 h3 {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border: 1px solid black;
     background-color: rgba(80, 30, 80, 0.2);
     padding: 0.5rem;
 }
 
 h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 
