@@ -28,7 +28,8 @@ header {
     border-bottom: 1px solid black;
     text-align: center;
     padding: 2rem;
-    background-color: rgba(80, 120, 190, 0.8);
+    /*background-color: rgba(80, 120, 190, 0.8);*/
+    background-color: #6B5B95
 }
 
 footer {

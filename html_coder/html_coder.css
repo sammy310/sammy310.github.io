@@ -1,5 +1,7 @@
 .html_coder legend {
     font-size: 2rem;
+    text-align: center;
+    border-bottom: 0.5rem ridge;
 }
 
 .html_coder_text {
