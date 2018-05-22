@@ -1,0 +1,65 @@
+legend {
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 0.5rem ridge;
+}
+
+#html_color_picker {
+    padding: 1rem;
+}
+
+#html_color_rgb {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#html_color_total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.div_color {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.color_input {
+    margin: 0.5rem;
+    width: 90%;
+}
+
+.color_color {
+    height: 2rem;
+}
+
+#color_red_color {
+    background-color: rgb(255, 0, 0);
+}
+
+#color_green_color {
+    background-color: rgb(0, 255, 0);
+}
+
+#color_blue_color {
+    background-color: rgb(0, 0, 255);
+}
+
+#color_total_color {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 4em;
+}
+
+#color_total_text {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+#color_total_text > p:nth-child(1) {
+    margin-bottom: 1rem;
+}

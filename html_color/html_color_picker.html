@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming</title>
+    <meta name="keywords" content="programming, 프로그래밍, C, web, html, css, javascript">
+    <meta name="description" content="프로그래밍 관련 정보들">
+
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../main_nav.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../scroll.css">
+    
+    <link rel="stylesheet" href="html_color_picker.css">
+    <script src="html_color_picker.js"></script>
+</head>
+
+<body>
+    <div id="scroll_top"></div>
+    <a href="../index.html">
+        <header><h1>Programming</h1></header>
+    </a>
+
+    <section>
+        <nav class="nav">
+            <ul>
+                <li><a href="../c/c_index.html">C 언어</a>
+                    <ul>
+                        <li><a href="../c/c_variable.html">변수</a></li>
+                        <li><a href="../c/c_operator.html">연산자</a></li>
+                        <li><a href="../c/c_datatype.html">자료형</a></li>
+                        <li><a href="../c/c_conditional.html">조건문</a></li>
+                        <li><a href="../c/c_loop.html">반복문</a></li>
+                        <li><a href="">함수</a></li>
+                        <li><a href="">포인터</a></li>
+                        <li><a href="">배열</a></li>
+                        <li><a href="">구조체, 공용체, 열거형</a></li>
+                        <li><a href="">파일 입출력</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../web/web.html">웹</a>
+                    <ul>
+                        <li><a href="../web/html/html_index.html">HTML</a>
+                            <ul>
+                                <li><a href="../web/html/html_semantic_element.html">의미론적 태그</a></li>
+                                <li><a href="../web/html/html_basic_tag.html">기본 태그</a></li>
+                                <li><a href="../web/html/html_lists.html">목록</a></li>
+                                <li><a href="../web/html/html_tables.html">표</a></li>
+                                <li><a href="../web/html/html_forms.html">입력양식</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../web/css/css_index.html">CSS</a>
+                            <ul>
+                                <li><a href="../web/css/css_insert.html">CSS 추가하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../web/javascript/js_index.html">JavaScript</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+        <main>
+            <h2>HTML COLOR PICKER</h2>
+
+            <article>
+                <form>
+                    <fieldset>
+                        <legend>HTML COLOR PICKER</legend>
+
+                        <div id="html_color_picker">
+                            <div id="html_color_rgb">
+                                <div id="div_color_red" class="div_color">
+                                    <div id="color_red_text">R : 255</div>
+                                    <input id="color_red" class="color_input" type="range" min="0" max="255" value="255">
+                                    <div id="color_red_color" class="color_color"><table><td></td></table></div>
+                                </div>
+
+                                <div id="div_color_green" class="div_color">
+                                    <div id="color_green_text">G : 255</div>
+                                    <input id="color_green" class="color_input" type="range" min="0" max="255" value="255">
+                                    <div id="color_green_color" class="color_color"><table><td></td></table></div>
+                                </div>
+
+                                <div id="div_color_blue" class="div_color">
+                                    <div id="color_blue_text">B : 255</div>
+                                    <input id="color_blue" class="color_input" type="range" min="0" max="255" value="255">
+                                    <div id="color_blue_color" class="color_color"><table><td></td></table></div>
+                                </div>
+                            </div>
+                            
+                            <div id="html_color_total">
+                                <div id="color_total_color" class="color_color"><table><td></td></table></div>
+                                
+                                <div id="color_total_text">
+                                    <p>RGB : rgb(255, 255, 255)</p>
+                                    <p>HEX : #FFFFFF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <script>html_color_picker()</script>
+                    </fieldset>
+                </form>
+            </article>
+
+        </main>
+    </section>
+
+
+
+    <footer id="scroll_footer">
+        <a href="https://github.com/sammy310/" target="_blank" class="nav_github">GitHub Site</a>
+    </footer>
+
+    <div class="scroll_button">
+        <a href="#scroll_top" class="scroll_button_top">↑</a>
+        <a href="#scroll_footer" class="scroll_button_footer">↓</a>
+    </div>
+</body>
+
+</html>
