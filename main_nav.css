@@ -1,0 +1,34 @@
+.nav {
+    border-right: 1px solid black;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgba(180, 160, 200, 0.8);
+    flex-basis: 16rem;
+    flex-shrink: 0;
+}
+
+.nav > ul {
+    border: 2px solid black;
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    background-color: lightsteelblue;
+}
+
+.nav ul ul {
+    font-size: 1rem;
+    list-style-type: disc;
+    color: gray;
+}
+
+.nav ul ul a {
+    color: darkslategray;
+}
+
+.nav ul ul a:hover {
+    color: orange;
+}

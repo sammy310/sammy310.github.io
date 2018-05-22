@@ -1,78 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-
-
-
-html {
-    background-color: rgba(80, 30, 80, 0.7);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-section, footer{
-    display: flex;
-}
-
-header {
-    border-bottom: 1px solid black;
-    text-align: center;
-    padding: 2rem;
-    background-color: rgba(80, 120, 190, 0.8);
-}
-
-.nav {
-    border-right: 1px solid black;
-    padding: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: rgba(180, 160, 200, 0.8);
-    flex-basis: 16rem;
-    flex-shrink: 0;
-}
-
-.nav > ul {
-    border: 2px solid black;
-    font-size: 1.2rem;
-    list-style-type: none;
-    padding: 1.3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 0.5rem;
-    background-color: lightsteelblue;
-}
-
-.nav ul ul {
-    font-size: 1rem;
-    list-style-type: disc;
-    color: gray;
-}
-
 a {
     color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
-.nav ul ul a {
-    color: darkslategray;
-}
-
 a:hover {
     color: orange;
     text-decoration: underline;
-}
-
-.nav ul ul a:hover {
-    color: orange;
 }
 
 
@@ -84,11 +18,6 @@ main {
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 30rem;
-}
-
-footer {
-    border-top: 1px solid black;
-    margin-bottom: 10rem;
 }
 
 .nav_github {
@@ -214,33 +143,5 @@ hr {
     margin: 1rem;
     border-bottom: 1px solid gray;
     box-shadow: 1px 1px 20px;
-}
-
-
-.scroll_button {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    right: 0.5rem;
-    bottom: 2rem;
-    background-color: darkgoldenrod;
-}
-
-.scroll_button_top, .scroll_button_footer {
-    border: 1px solid;
-    background-color: burlywood;
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-}
-
-.scroll_button_top {
-    margin-bottom: 0;
-}
-
-.scroll_button a:hover {
-    color: inherit;
-    text-decoration: none;
 }
 

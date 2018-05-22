@@ -1,0 +1,28 @@
+.html_coder legend {
+    font-size: 2rem;
+}
+
+.html_coder_text {
+    border: 3px solid gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    resize: none;
+}
+
+.html_coder_text:focus {
+    border-color: firebrick;
+    background-color: rgb(255, 253, 255);
+}
+
+.html_coder_button {
+    font-size: 1.3rem;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 3px 3px lightblue;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.html_coder_button:hover {
+    background-color: rgb(245, 255, 255);
+}
