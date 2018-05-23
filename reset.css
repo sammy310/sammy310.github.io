@@ -9,30 +9,3 @@
 a {
     text-decoration-line: none;
 }
-
-html {
-    background-color: rgba(80, 30, 80, 0.7);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-section, footer{
-    display: flex;
-}
-
-header {
-    border-bottom: 1px solid black;
-    text-align: center;
-    padding: 2rem;
-    /*background-color: rgba(80, 120, 190, 0.8);*/
-    background-color: #6B5B95
-}
-
-footer {
-    border-top: 1px solid black;
-    margin-bottom: 10rem;
-}

@@ -5,16 +5,19 @@
 }
 
 .html_coder_text {
+    box-sizing: border-box;
     border: 3px solid gray;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
     resize: none;
 }
 
 .html_coder_text:focus {
     border-color: firebrick;
-    background-color: rgb(255, 253, 255);
+    background-color: rgb(255, 250, 255);
 }
 
 .html_coder_button {
