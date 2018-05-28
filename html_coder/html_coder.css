@@ -15,6 +15,10 @@
     resize: none;
 }
 
+#html_encoder_result, #html_decoder_result {
+    display: none;
+}
+
 .html_coder_text:focus {
     border-color: firebrick;
     background-color: rgb(255, 250, 255);
