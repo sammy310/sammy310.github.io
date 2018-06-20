@@ -193,7 +193,7 @@ function gomoku_check(board_arr) {
             sub_str[sub_str.length - 1] += board_arr[(15 - i + j)*15 + j];
         }
     }
-    for(i=5; i<15; i++) {
+    for(i=5; i<=15; i++) {
         sub_str[sub_str.length] = '';
         for(j=0; j<i; j++) {
             sub_str[sub_str.length - 1] += board_arr[j*15 + (15 - i + j)];
