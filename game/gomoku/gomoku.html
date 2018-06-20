@@ -16,6 +16,9 @@
     
     <script src="/jquery-3.3.1.js"></script>
     <script src="/main_nav.js"></script>
+    
+    <script src="gomoku.js"></script>
+    <link rel="stylesheet" href="gomoku.css">
 </head>
 
 <body>
@@ -24,33 +27,13 @@
 
     <section>
         <main>
-            <h2>JavaScript</h2>
-
-            <h4>자바스크립트(JavaScript) : 웹페이지의 동작을 담당하는 언어</h4>
-
-            <hr>
-
+            <h2>오목</h2>
             <article>
-                <p>크로스 플랫폼(cross platform)</p>
-                <p>객체지향 스크립트 언어</p>
-                <p>동적 형지정</p>
-            </article>
-            
-            <hr>
-            
-            <article>
-                <h3>장점</h3>
-                <ol>
-                    <li>컴파일 과정이 없어 다른 언어와 비교했을 때 빠른 시간 안에 스크립트 코드를 작성할 수 있음</li>
-                    <li>웹에 특화된 기술이기 때문에 운영체제나 플랫폼에 상관없이 잘 작동되고 확장성도 높음</li>
-                </ol>
-                
-                <h3>단점</h3>
-                <ol>
-                    <li>내부에서 제공되는 기능이 제한적임</li>
-                    <li>관련된 개발도구가 적은 편임</li>
-                    <li>소스코드가 공개됨</li>
-                </ol>
+                <div id="gomoku">
+                    <table id="board_border"></table>
+                    <div id="gomoku_board"></div>
+                </div>
+                <p id="gomoku_message"></p>
             </article>
         </main>
     </section>

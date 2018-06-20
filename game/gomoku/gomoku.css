@@ -1,0 +1,69 @@
+article {
+    padding-bottom: 4rem;
+    background-color: burlywood;
+}
+
+#gomoku {
+    display: block;
+    position: relative;
+}
+
+#board_border {
+    display: flex;
+    flex-direction: column;
+}
+
+#board_border tr {
+    display: flex;
+    flex-direction: row;
+}
+
+#board_border td {
+    display: block;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #A0A0A0;
+}
+
+#board_border tr:first-child td {
+    border-top: 1px solid black;
+}
+
+#board_border td:last-child {
+    border-right: 1px solid black;
+}
+
+#gomoku_board {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.board_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.board_data {
+    border: 0px solid;
+    border-radius: 100%;
+}
+
+.Black {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 100%;
+    
+}
+
+.White {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+#gomoku_message {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+}

@@ -2,6 +2,7 @@
     height: 3rem;
     border-bottom: 1px solid black;
     background-color: beige;
+    z-index: 1;
 }
 
 #nav ul {
