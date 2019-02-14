@@ -37,6 +37,11 @@ $(document).ready(function() {
                 <li><a href="/game/gomoku/gomoku.html">오목</a></li>\
             </ul>\
         </li>\
+        <li id="nav_develop"><a href="/develop/develop.html">계발</a>\
+            <ul id="nav_develop_list" class="nav_child_first">\
+                <li><a href="/develop/trian/trian.html">Trian</a></li>\
+            </ul>\
+        </li>\
     </ul>\
 </nav>');
     
@@ -70,5 +75,11 @@ $(document).ready(function() {
         $('#nav_game_list').css('display', 'block');
     }, function() {
         $('#nav_game_list').css('display', 'none');
+    });
+    
+    $('#nav_develop').hover(function() {
+        $('#nav_develop_list').css('display', 'block');
+    }, function() {
+        $('#nav_develop_list').css('display', 'none');
     });
 });

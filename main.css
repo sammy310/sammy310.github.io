@@ -15,6 +15,12 @@ a:hover {
     padding-left: 3rem;
 }
 
+.nav_googlePlay {
+    font-size: 1.3rem;
+    color: blueviolet;
+    padding: 0.3rem;
+}
+
 h1 {
     padding: 1rem;
     font-size: 3rem;
