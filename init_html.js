@@ -1,4 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    // Make Head
+    $('head').prepend('\
+<meta charset="utf-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+<meta name="keywords" content="programming, 프로그래밍, game, unity">\
+<meta name="description" content="게임 프로그래밍">\
+<link rel="stylesheet" href="/reset.css">\
+<link rel="stylesheet" href="/layout.css">\
+<link rel="stylesheet" href="/main_nav.css">\
+<link rel="stylesheet" href="/main.css">\
+<link rel="stylesheet" href="/scroll.css">\
+<title>32 Labortory</title>');
+
+
     // Make Navigation
     $('section:first').prepend('\
 <nav id="nav">\
@@ -46,42 +60,42 @@ $(document).ready(function() {
         </li>\
     </ul>\
 </nav>');
-    
-    
+
+
     // Navigation Event
-    $('#nav_c').hover(function() {
+    $('#nav_c').hover(function () {
         $('#nav_c_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_c_list').css('display', 'none');
     });
-    
-    $('#nav_web').hover(function() {
+
+    $('#nav_web').hover(function () {
         $('#nav_web_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_web_list').css('display', 'none');
     });
-    
-    $('#nav_html').hover(function() {
+
+    $('#nav_html').hover(function () {
         $('#nav_html_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_html_list').css('display', 'none');
     });
-    
-    $('#nav_css').hover(function() {
+
+    $('#nav_css').hover(function () {
         $('#nav_css_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_css_list').css('display', 'none');
     });
-    
-    $('#nav_game').hover(function() {
+
+    $('#nav_game').hover(function () {
         $('#nav_game_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_game_list').css('display', 'none');
     });
-    
-    $('#nav_develop').hover(function() {
+
+    $('#nav_develop').hover(function () {
         $('#nav_develop_list').css('display', 'block');
-    }, function() {
+    }, function () {
         $('#nav_develop_list').css('display', 'none');
     });
 });
