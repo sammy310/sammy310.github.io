@@ -10,7 +10,7 @@ $(document).ready(function () {
 <link rel="stylesheet" href="/main_nav.css">\
 <link rel="stylesheet" href="/main.css">\
 <link rel="stylesheet" href="/scroll.css">\
-<title>32 Labortory</title>');
+<title>32 Laboratory</title>');
 
 
     // Make Navigation
