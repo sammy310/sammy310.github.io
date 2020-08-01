@@ -28,6 +28,7 @@ function CreateTable(dataType) {
 
                 var colCount = 1;
                 var csvData = dataRequest.responseText.split('\n');
+                csvData.pop();
                 tableStr = "";
                 csvData.forEach(col => {
                     if(colCount == 1){
@@ -165,7 +166,7 @@ function main() {
 function GetParam(){
     var url = unescape(location.href);
     var paramStr = url.substr(url.indexOf('?') + 1, url.length).toLowerCase();
-    console.log(paramStr);
+
     if(paramStr.indexOf('cpu') != -1){
         return 'CPU';
     }
@@ -196,4 +197,9 @@ function GetParam(){
     else{
         return 'CPU';
     }
+}
+
+function FilterValueChange(){
+    if(document.getElementById('input_filter').value == "") ResetFind();
+    FindProduct(document.getElementById('input_filter').value);
 }
