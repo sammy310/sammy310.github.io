@@ -55,6 +55,10 @@ table tr:nth-child(2n) {
     background-color: #f6f8fa;
 }
 
+td {
+    line-height: 2em;
+}
+
 .line-number {
     padding: 10px 8px 9px;
     text-align: right;

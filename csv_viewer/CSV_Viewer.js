@@ -11,6 +11,7 @@ var ComPartsCSVData = {
 'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv'}
 
 var ProductName = new Array();
+var FilterText;
 
 
 function GetTable() {
@@ -56,7 +57,7 @@ function CreateTable(dataType) {
                         }
                         else{
                             if(dataType == 'SSD' || dataType == 'HDD'){
-                                newStr = StorageStr(row);
+                                newStr = StorageStr(dataType, row);
                             }
                         }
 
@@ -80,6 +81,11 @@ function CreateTable(dataType) {
                 tableStr += '</tbody>'
 
                 GetTable().innerHTML = tableStr;
+
+                if(FilterText != '') {
+                    document.getElementById('input_filter').value = FilterText;
+                    FindProduct(FilterText);
+                }
 
             } else {
                 // console.error(dataRequest.responseText);
@@ -118,15 +124,33 @@ function CSVStrToArr(csvStr){
     return csvArr;
 }
 
-function StorageStr(storageStr){
+function StorageStr(storageDataType, storageStr){
     var newStr = new String();
     var count = 0;
-    storageStr.replace(' ', '\n').split('_').forEach(val => {
+    var tempStr = new String();
+    
+    if(storageDataType == 'HDD'){
+        storageStr.split(' ').forEach(val => {
+            if(count%2 == 0){
+                tempStr += val;
+            }
+            else{
+                tempStr += ' ' + val + '<br>';
+            }
+            count++;
+        });
+    }
+    else{
+        tempStr = storageStr.replace(/ /g, '<br>');
+    }
+
+    count = 0;
+    tempStr.split('_').forEach(val => {
         if(count%2 == 0){
             newStr += val;
         }
         else{
-            newStr += '_' + val + ' : ';
+            newStr += ' - ' + val + ' : ';
         }
         count++;
     });
@@ -164,34 +188,37 @@ function main() {
 
 
 function GetParam(){
-    var url = unescape(location.href);
+    var url = location.href;
     var paramStr = url.substr(url.indexOf('?') + 1, url.length).toLowerCase();
+    var paramArr = paramStr.split('&');
 
-    if(paramStr.indexOf('cpu') != -1){
+    FilterText = (paramArr.length>1) ? decodeURIComponent(paramArr[1]) : '';
+
+    if(paramArr[0].indexOf('cpu') != -1){
         return 'CPU';
     }
-    else if(paramStr.indexOf('vga') != -1){
+    else if(paramArr[0].indexOf('vga') != -1){
         return 'VGA';
     }
-    else if(paramStr.indexOf('mboard') != -1){
+    else if(paramArr[0].indexOf('mboard') != -1){
         return 'MBoard';
     }
-    else if(paramStr.indexOf('ram') != -1){
+    else if(paramArr[0].indexOf('ram') != -1){
         return 'RAM';
     }
-    else if(paramStr.indexOf('ssd') != -1){
+    else if(paramArr[0].indexOf('ssd') != -1){
         return 'SSD';
     }
-    else if(paramStr.indexOf('hdd') != -1){
+    else if(paramArr[0].indexOf('hdd') != -1){
         return 'HDD';
     }
-    else if(paramStr.indexOf('cooler') != -1){
+    else if(paramArr[0].indexOf('cooler') != -1){
         return 'Cooler';
     }
-    else if(paramStr.indexOf('case') != -1){
+    else if(paramArr[0].indexOf('case') != -1){
         return 'Case';
     }
-    else if(paramStr.indexOf('power') != -1){
+    else if(paramArr[0].indexOf('power') != -1){
         return 'Power';
     }
     else{
