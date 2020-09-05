@@ -56,7 +56,7 @@ function CreateTable(dataType) {
                             }
                         }
                         else{
-                            if(dataType == 'SSD' || dataType == 'HDD'){
+                            if(dataType == 'RAM' || dataType == 'SSD' || dataType == 'HDD'){
                                 newStr = StorageStr(dataType, row);
                             }
                         }
