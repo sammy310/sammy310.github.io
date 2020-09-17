@@ -8,7 +8,8 @@ var ComPartsCSVData = {
 'HDD':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/HDD.csv',
 'Cooler':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Cooler.csv',
 'Case':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Case.csv',
-'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv'}
+'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv',
+'Monitor':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Monitor.csv'}
 
 var ProductName = new Array();
 var FilterText;
@@ -220,6 +221,9 @@ function GetParam(){
     }
     else if(paramArr[0].indexOf('power') != -1){
         return 'Power';
+    }
+    else if(paramArr[0].indexOf('monitor') != -1){
+        return 'Monitor';
     }
     else{
         return 'CPU';
