@@ -11,7 +11,7 @@ var ComPartsCSVData = {
 'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv',
 'Monitor':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Monitor.csv'}
 
-var StorageType = ['CPU', 'RAM', 'SSD', 'HDD']
+var StorageType = ['RAM', 'SSD', 'HDD']
 
 var ProductName = new Array();
 var FilterText;
@@ -59,6 +59,9 @@ function CreateTable(dataType) {
                             }
                         }
                         else{
+                            if(dataType == 'CPU'){
+                                newStr = CPUStr(row);
+                            }
                             if(StorageType.includes(dataType)){
                                 newStr = StorageStr(dataType, row);
                             }
@@ -125,6 +128,24 @@ function CSVStrToArr(csvStr){
     });
     
     return csvArr;
+}
+
+function CPUStr(cpuStr){
+    var newStr = new String();
+    var tempStr = cpuStr.replace(/ /g, '<br>');
+    var count = 0;
+    
+    tempStr.split('_').forEach(val => {
+        if(count%2 == 0){
+            newStr += val;
+        }
+        else{
+            newStr += ' : ' + val;
+        }
+        count++;
+    });
+    
+    return newStr;
 }
 
 function StorageStr(storageDataType, storageStr){
