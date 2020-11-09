@@ -131,21 +131,7 @@ function CSVStrToArr(csvStr){
 }
 
 function CPUStr(cpuStr){
-    var newStr = new String();
-    var tempStr = cpuStr.replace(/ /g, '<br>');
-    var count = 0;
-    
-    tempStr.split('_').forEach(val => {
-        if(count%2 == 0){
-            newStr += val;
-        }
-        else{
-            newStr += ' : ' + val;
-        }
-        count++;
-    });
-    
-    return newStr;
+    return cpuStr.replace(/ /g, '<br>').replace(/_/, ' : ');
 }
 
 function StorageStr(storageDataType, storageStr){
