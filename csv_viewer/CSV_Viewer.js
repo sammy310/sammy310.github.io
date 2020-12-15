@@ -11,19 +11,28 @@ var ComPartsCSVData = {
 'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv',
 'Monitor':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Monitor.csv'}
 
+var LastComPartsCSVData = "https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/Last_Data/"
+
 var StorageType = ['RAM', 'SSD', 'HDD']
 
 var ProductName = new Array();
-var FilterText;
 
 
 function GetTable() {
     return document.getElementById('table');
 }
 
-function CreateTable(dataType) {
+function CreateTable() {
     var tableStr = "";
 
+    var dataType = getParameterByName('data').toUpperCase();
+    var dataDate = getParameterByName('date');
+    var FilterText = getParameterByName('search');
+
+    if (dataType == "" || !ComPartsCSVData.hasOwnProperty(dataType))
+        dataType = 'CPU'
+
+    
     var dataRequest = new XMLHttpRequest();
     dataRequest.onreadystatechange = function() {
         if (dataRequest.readyState === dataRequest.DONE) {
@@ -88,7 +97,7 @@ function CreateTable(dataType) {
 
                 GetTable().innerHTML = tableStr;
 
-                if(FilterText != '') {
+                if(FilterText) {
                     document.getElementById('input_filter').value = FilterText;
                     FindProduct(FilterText);
                 }
@@ -98,7 +107,19 @@ function CreateTable(dataType) {
             }
         }
     };
-    dataRequest.open('GET', ComPartsCSVData[dataType]);
+
+    if (dataDate && dataDate.length == 6) {
+        var lastDataURL = LastComPartsCSVData;
+
+        lastDataURL += dataDate.substr(0, 4) + '-' + dataDate.substr(4) + '/';
+
+        lastDataURL += dataType + '.csv'
+        
+        dataRequest.open('GET', lastDataURL);
+    }
+    else
+        dataRequest.open('GET', ComPartsCSVData[dataType]);
+
     dataRequest.send();
 
 }
@@ -193,51 +214,17 @@ function FindProduct(findStr){
 }
 
 function main() {
-    CreateTable(GetParam());
+    CreateTable();
 }
 
 
-function GetParam(){
-    var url = location.href;
-    var paramStr = url.substr(url.indexOf('?') + 1, url.length).toLowerCase();
-    var paramArr = paramStr.split('&');
-
-    FilterText = (paramArr.length>1) ? decodeURIComponent(paramArr[1]) : '';
-
-    if(paramArr[0].indexOf('cpu') != -1){
-        return 'CPU';
-    }
-    else if(paramArr[0].indexOf('vga') != -1){
-        return 'VGA';
-    }
-    else if(paramArr[0].indexOf('mboard') != -1){
-        return 'MBoard';
-    }
-    else if(paramArr[0].indexOf('ram') != -1){
-        return 'RAM';
-    }
-    else if(paramArr[0].indexOf('ssd') != -1){
-        return 'SSD';
-    }
-    else if(paramArr[0].indexOf('hdd') != -1){
-        return 'HDD';
-    }
-    else if(paramArr[0].indexOf('cooler') != -1){
-        return 'Cooler';
-    }
-    else if(paramArr[0].indexOf('case') != -1){
-        return 'Case';
-    }
-    else if(paramArr[0].indexOf('power') != -1){
-        return 'Power';
-    }
-    else if(paramArr[0].indexOf('monitor') != -1){
-        return 'Monitor';
-    }
-    else{
-        return 'CPU';
-    }
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
 
 function FilterValueChange(){
     if(document.getElementById('input_filter').value == "") ResetFind();
