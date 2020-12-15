@@ -1,0 +1,97 @@
+.menu-container:hover .menu-slide {
+  -o-transform: translate(270px, 0);
+  -moz-transform: translate(270px, 0);
+  -ms-transform: translate(270px, 0);
+  -webkit-transform: translate(270px, 0);
+  transform: translate(270px, 0);
+  opacity: 1;
+}
+
+.menu-container .menu-btn {
+  color: #333333;
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+  z-index: 10000;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.menu-btn {
+  width:45px;
+  height:45px;
+}
+
+#line-wrapper {
+  cursor:pointer;
+  width:45px;
+  height:45px;
+  position:relative;
+  background: rgb(178, 96, 255);
+}
+
+.line {
+  background:#ffffff;
+  margin-left: 7.5px;
+  margin-top:4px;
+  margin-bottom:4px;
+  width:30px;
+  height:4px; 
+  border-radius:2px;
+  box-shadow:0 1px 3px rgba(0,0,0,.5);
+  position:relative;
+
+  top: 12px;
+}
+
+.menu-container .menu-btn:hover { color: #666666; }
+
+.menu-container .menu-slide {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #e0e0e0;
+  height: 100%;
+  left: -270px;
+  top: 0;
+  width: 270px;
+  overflow-y: auto;
+  z-index: 10000;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 6s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+  opacity: 0;
+}
+
+.menu-container .menu-slide .menu-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-container .menu-slide .menu-list .menu-item a {
+  padding: 8px;
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-container .menu-slide .menu-list .menu-item a:hover {
+  color: #FFF;
+  background-color: #333;
+  transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}

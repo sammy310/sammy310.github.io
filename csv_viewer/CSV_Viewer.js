@@ -1,4 +1,6 @@
 
+var FirstDataDate = new Date(2020, 6, 1)
+
 var ComPartsCSVData = {
 'CPU':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/CPU.csv',
 'VGA':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/VGA.csv',
@@ -11,12 +13,14 @@ var ComPartsCSVData = {
 'Power':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Power.csv',
 'Monitor':'https://raw.githubusercontent.com/sammy310/Danawa_Crawler/master/crawl_data/Monitor.csv'}
 
-var LastComPartsCSVData = "https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/Last_Data/"
+var CSVViewerURL = 'https://sammy310.github.io/csv_viewer/CSV_Viewer.html?'
+var LastComPartsCSVData = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/Last_Data/'
 
 var StorageType = ['RAM', 'SSD', 'HDD']
 
 var ProductName = new Array();
 
+var dataType
 
 function GetTable() {
     return document.getElementById('table');
@@ -25,11 +29,11 @@ function GetTable() {
 function CreateTable() {
     var tableStr = "";
 
-    var dataType = getParameterByName('data').toUpperCase();
+    dataType = getParameterByName('data').toUpperCase();
     var dataDate = getParameterByName('date');
     var FilterText = getParameterByName('search');
 
-    if (dataType)
+    if (dataType == "")
         dataType = 'CPU'
     else {
         var isDataCorrect = false
@@ -228,6 +232,7 @@ function FindProduct(findStr){
 
 function main() {
     CreateTable();
+    CreateMenu();
 }
 
 
@@ -242,4 +247,40 @@ function getParameterByName(name) {
 function FilterValueChange(){
     if(document.getElementById('input_filter').value == "") ResetFind();
     FindProduct(document.getElementById('input_filter').value);
+}
+
+
+function CreateMenu() {
+    var menuStr = ""
+
+    for (var key in ComPartsCSVData) {
+        menuStr += '<li class="menu-item"><a href="' + CSVViewerURL + 'data=' + key + '">' + key + '</a></li>'
+    }
+
+
+    menuStr += '<hr>'
+
+
+    var lastDataDate = FirstDataDate
+    var today = new Date()
+    while (lastDataDate < today) {
+        var printDateStr = String(lastDataDate.getFullYear()) + '년 '
+        var dateStr = String(lastDataDate.getFullYear())
+        if (lastDataDate.getMonth()+1 < 10) {
+            printDateStr += '0'
+            dateStr += '0'
+        }
+        printDateStr += String(lastDataDate.getMonth()+1) + '월 데이터'
+        dateStr += (lastDataDate.getMonth()+1)
+
+        if (lastDataDate.getFullYear() == today.getFullYear() && lastDataDate.getMonth() == today.getMonth())
+            menuStr += '<li class="menu-item"><a href="' + CSVViewerURL + 'data=' + dataType + '">' + printDateStr + '</a></li>'
+        else
+            menuStr += '<li class="menu-item"><a href="' + CSVViewerURL + 'data=' + dataType + '&date=' + dateStr + '">' + printDateStr + '</a></li>'
+
+        lastDataDate.setMonth(lastDataDate.getMonth() + 1)
+    }
+
+    
+    document.getElementById('menu_list').innerHTML = menuStr
 }
