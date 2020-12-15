@@ -29,8 +29,21 @@ function CreateTable() {
     var dataDate = getParameterByName('date');
     var FilterText = getParameterByName('search');
 
-    if (dataType == "" || !ComPartsCSVData.hasOwnProperty(dataType))
+    if (dataType)
         dataType = 'CPU'
+    else {
+        var isDataCorrect = false
+        for (var key in ComPartsCSVData) {
+            if (dataType == key.toUpperCase()) {
+                dataType = key
+                isDataCorrect = true
+                break
+            }
+        }
+
+        if (isDataCorrect == false)
+            dataType = 'CPU'
+    }
 
     
     var dataRequest = new XMLHttpRequest();
