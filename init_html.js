@@ -49,6 +49,7 @@ $(document).ready(function () {
         <li id="nav_game"><a href="/game/game.html">게임</a>\
             <ul id="nav_game_list" class="nav_child_first">\
                 <li><a href="/game/gomoku/gomoku.html">오목</a></li>\
+                <li><a href="/game/Trian/trian.html" target="_blank">삼각 지뢰찾기</a></li>\
             </ul>\
         </li>\
         <li id="nav_develop"><a href="/develop/develop.html">계발</a>\
