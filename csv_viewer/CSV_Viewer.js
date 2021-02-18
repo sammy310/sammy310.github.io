@@ -280,6 +280,12 @@ function CreateMenu() {
 
         lastDataDate.setMonth(lastDataDate.getMonth() + 1)
     }
+    
+    
+    menuStr += '<hr>'
+    
+    
+    menuStr += '<li class="menu-item"><a href="https://github.com/sammy310">GitHub</a></li>'
 
     
     document.getElementById('menu_list').innerHTML = menuStr
