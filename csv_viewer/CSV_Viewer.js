@@ -285,7 +285,7 @@ function CreateMenu() {
     menuStr += '<hr>'
     
     
-    menuStr += '<li class="menu-item"><a href="https://github.com/sammy310">GitHub</a></li>'
+    menuStr += '<li class="menu-item"><a href="https://github.com/sammy310" target="_blank">GitHub</a></li>'
 
     
     document.getElementById('menu_list').innerHTML = menuStr
