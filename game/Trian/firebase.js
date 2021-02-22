@@ -5,8 +5,7 @@ var firebaseConfig = {
     projectId: "trian-49247795",
     storageBucket: "trian-49247795.appspot.com",
     messagingSenderId: "119385446960",
-    appId: "1:119385446960:web:9ddf2dbcde8d35bc412bf5",
-    measurementId: "G-LGCCYVRELZ"
+    appId: "1:119385446960:web:9ddf2dbcde8d35bc412bf5"
 };
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
