@@ -19,3 +19,5 @@
 .webgl-content .footer .description {margin-right: 30px; float: right; border: solid; border-color: darkviolet;}
 .webgl-content .footer .title {margin-right: 10px; float: right;}
 .webgl-content .footer .fullscreen {background-image: url('fullscreen.png'); width: 38px; float: right; cursor: pointer;}
+
+.webgl-content .footer #user_info {margin-left: 30px; padding-left: 5px; padding-right: 5px; float: left; border: solid; border-color: darkviolet; cursor: pointer;}

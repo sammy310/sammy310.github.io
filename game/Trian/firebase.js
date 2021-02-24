@@ -10,3 +10,18 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 const analytics = firebase.analytics();
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+      var userInfo = document.getElementById("user_info");
+      userInfo.innerHTML = user.displayName + " | 로그아웃";
+      userInfo.style.display = "inline-block";
+  } else {
+    var userInfo = document.getElementById("user_info").style.display = "none";
+  }
+});
+document.getElementById("user_info").onclick = function(){
+    if (firebase.auth().currentUser){
+        firebase.auth().signOut();
+    }
+};
