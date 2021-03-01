@@ -12,12 +12,65 @@
 .webgl-content .progress.Dark .full {background-image: url('progressFull.Dark.png');}
 
 .webgl-content .footer {margin-top: 5px; height: 38px; line-height: 38px; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 18px;}
-.webgl-content .footer .lab32-logo, github-logo, .googleplay-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;}
+.webgl-content .footer .lab32-logo, github-logo, .googleplay-logo, .title, .fullscreen, .privacy, .terms, .notification {height: 100%; display: inline-block; background: transparent center no-repeat;}
 .webgl-content .footer .lab32-logo {float: left; cursor: pointer;}
 .webgl-content .footer .github-logo {float: left; padding-left: 10px; cursor: pointer;}
 .webgl-content .footer .googleplay-logo {float: left; padding-left: 10px; cursor: pointer;}
-.webgl-content .footer .description {margin-right: 30px; float: right; border: solid; border-color: darkviolet;}
+.webgl-content .footer .description {margin-right: 10px; padding-left: 5px; padding-right: 5px; float: right; border: solid; border-color: darkviolet;}
 .webgl-content .footer .title {margin-right: 10px; float: right;}
 .webgl-content .footer .fullscreen {background-image: url('fullscreen.png'); width: 38px; float: right; cursor: pointer;}
 
-.webgl-content .footer #user_info {margin-left: 30px; padding-left: 5px; padding-right: 5px; float: left; border: solid; border-color: darkviolet; cursor: pointer;}
+#user_info {margin-right: 30px; padding-left: 10px; padding-right: 10px; float: right; border: solid; border-color: darkviolet; cursor: pointer;}
+.privacy, .terms {margin-left: 10px; padding-left: 10px; padding-right: 10px; float: left; border: solid; border-color: darkviolet; cursor: pointer;}
+.notification {margin-left: 10px; padding-left: 10px; padding-right: 10px; float: left; border: solid; border-color: darkviolet; font-size: 14px;}
+
+
+/*
+	css-only-tooltip version 1.0.0
+	ⓒ 2015 AHN JAE-HA http://github.com/eu81273
+	MIT License
+*/
+
+
+[data-tooltip-text]:hover {
+	position: relative;
+}
+
+[data-tooltip-text]:after {
+	-webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+	-moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+	transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+
+	background-color: rgba(178, 135, 229, 0.8);
+
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	
+  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+  color: #FFFFFF;
+	font-size: 14px;
+	margin-bottom: 10px;
+	padding: 7px 12px;
+	position: absolute;
+	width: auto;
+	min-width: 325px;
+	word-wrap: break-word;
+
+	z-index: 9999;
+
+	opacity: 0;
+	right: 9999px;
+  bottom: 90%;
+	white-space: pre;
+	content: attr(data-tooltip-text);
+}
+
+[data-tooltip-text]:hover:after {
+	bottom: 130%;
+	right: 0;
+	opacity: 1;
+}
