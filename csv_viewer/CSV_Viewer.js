@@ -1,6 +1,7 @@
 
 const FirstDataDate = new Date(2020, 6, 1);
 const PriceDataChangeDate = new Date(2021, 8, 25);
+const TodayDate = new Date();
 
 const CSVViewerURL = 'https://sammy310.github.io/csv_viewer/CSV_Viewer.html?';
 const CSVCategoryURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/CrawlingCategory.csv';
@@ -23,6 +24,13 @@ var isLastFormattedData = false;
 
 const CategoryKey_Name = 'name';
 const CategoryKey_URL = 'url';
+
+const Parameter_Category = 'category'
+const Parameter_Date = 'date'
+const Parameter_Filter = 'search'
+
+var tableHTMLDict = {}
+var isCSVRequest = false;
 
 
 function main() {
@@ -60,7 +68,7 @@ function GetCategoryData() {
 
 function OnGetCategoryData() {
     GetRequestInfo();
-    RequestCSVData();
+    CreateTable();
     CreateMenu();
 }
 
@@ -70,9 +78,9 @@ function GetTable() {
 }
 
 function GetRequestInfo() {
-    categoryName = getParameterByName('data').toUpperCase();
-    requestDate = getParameterByName('date');
-    filterText = getParameterByName('search');
+    categoryName = getParameterByName(Parameter_Category);
+    requestDate = getParameterByName(Parameter_Date);
+    filterText = getParameterByName(Parameter_Filter);
 
     if (categoryName == '') {
         categoryIndex = 0;
@@ -94,17 +102,16 @@ function GetRequestInfo() {
         }
     }
 
-    var date = requestDate;
-    if (date == null) {
-        date = GetDateStr(new Date());
+    if (!requestDate) {
+        requestDate = GetTodayDateStr();
     }
-    isLastFormattedData = (date.substr(0, 4) <= PriceDataChangeDate.getFullYear() && date.substr(4) <= (PriceDataChangeDate.getMonth()+1));
+    isLastFormattedData = (requestDate.substr(0, 4) <= PriceDataChangeDate.getFullYear() && requestDate.substr(4) <= (PriceDataChangeDate.getMonth()+1));
 }
 
 function GetCSVURL(dateStr) {
     var csvDataURL = '';
 
-    if (dateStr && dateStr.length == 6) {
+    if (dateStr && dateStr.length == 6 && dateStr != GetTodayDateStr()) {
         csvDataURL = LastCSVDataURL;
         csvDataURL += dateStr.substr(0, 4) + '-' + dateStr.substr(4) + '/';
     }
@@ -117,84 +124,114 @@ function GetCSVURL(dateStr) {
     return csvDataURL;
 }
 
+function GetTableHTMLDictKey() {
+    return categoryName + '_' + requestDate;
+}
+
+function CreateTable() {
+    if (isCSVRequest == true) return;
+
+    var htmlDataKey = GetTableHTMLDictKey();
+    if (tableHTMLDict[htmlDataKey] == undefined) {
+        RequestCSVData();
+    }
+    else {
+        GetTable().innerHTML = tableHTMLDict[htmlDataKey];
+    }
+
+    UpdateMenu();
+}
+
 function RequestCSVData() {
     var csvDataURL = GetCSVURL(requestDate);
 
     var dataRequest = new XMLHttpRequest();
     dataRequest.onreadystatechange = function() {
-        if (dataRequest.readyState === dataRequest.DONE) {
-            if (dataRequest.status === 200) {
-                ProductName = [];
+        try {
+            if (dataRequest.readyState === dataRequest.DONE) {
+                if (dataRequest.status === 200) {
+                    ProductName = [];
 
-                var colCount = 1;
-                var csvData = dataRequest.responseText.split('\n');
-                csvData.pop();
-                var tableStr = '';
-                csvData.forEach(col => {
-                    if (colCount == 1){
-                        tableStr += '<thead>';
-                    }
-                    else if (colCount == 2) {
-                        tableStr += '<tbody>';
-                    }
-                    tableStr += '<tr id="LC' + colCount + '" class="col">';
-                    tableStr += '<td id="L' + colCount + '" class="line-number">' + colCount + '</td>';
+                    var colCount = 1;
+                    var csvData = dataRequest.responseText.split('\n');
+                    csvData.pop();
+                    var tableStr = '';
+                    csvData.forEach(col => {
+                        if (colCount == 1){
+                            tableStr += '<thead>';
+                        }
+                        else if (colCount == 2) {
+                            tableStr += '<tbody>';
+                        }
+                        tableStr += '<tr id="LC' + colCount + '" class="col">';
+                        tableStr += '<td id="L' + colCount + '" class="line-number">' + colCount + '</td>';
 
-                    var rowCount = -1;
-                    var productId;
-                    CSVStrToArr(col).forEach(row => {
-                        var newStr = row;
-                        if (colCount > 1) {
-                            if (rowCount == -1) {
-                                productId = row;
+                        var rowCount = -1;
+                        var productId;
+                        CSVStrToArr(col).forEach(row => {
+                            var newStr = row;
+                            if (colCount > 1) {
+                                if (rowCount == -1) {
+                                    productId = row;
+                                }
+                                else if (rowCount == 0) {
+                                    newStr = '<a href="http://prod.danawa.com/info/?pcode=' + productId + '" target="_blank">' + newStr + '</a>';
+                                    ProductName.push(row);
+                                }
+                                else {
+                                    newStr = FormattingDataStr(row, rowCount);
+                                }
                             }
-                            else if (rowCount == 0) {
-                                newStr = '<a href="http://prod.danawa.com/info/?pcode=' + productId + '" target="_blank">' + newStr + '</a>';
-                                ProductName.push(row);
+
+                            if (colCount == 1) {
+                                tableStr += '<th>' + newStr + '</th>';
                             }
                             else {
-                                newStr = FormattingDataStr(row, rowCount);
+                                tableStr += '<td>' + newStr + '</td>';
                             }
-                        }
 
+                            rowCount++;
+                        });
+                        
+                        tableStr += '</tr>';
                         if (colCount == 1) {
-                            tableStr += '<th>' + newStr + '</th>';
-                        }
-                        else {
-                            tableStr += '<td>' + newStr + '</td>';
+                            tableStr += '</thead>';
                         }
 
-                        rowCount++;
+                        colCount++;
                     });
-                    
-                    tableStr += '</tr>';
-                    if (colCount == 1) {
-                        tableStr += '</thead>';
+                    tableStr += '</tbody>';
+
+                    tableHTMLDict[GetTableHTMLDictKey()] = tableStr;
+                    GetTable().innerHTML = tableStr;
+
+                    if (filterText) {
+                        document.getElementById('input_filter').value = filterText;
+                        FindProduct(filterText);
                     }
 
-                    colCount++;
-                });
-                tableStr += '</tbody>';
+                    isCSVRequest = false;
+                    SetLoading(false);
 
-                GetTable().innerHTML = tableStr;
-
-                if (filterText) {
-                    document.getElementById('input_filter').value = filterText;
-                    FindProduct(filterText);
+                    return;
                 }
-
-                return;
+                else if (dataRequest.status === 404) {
+                    if (requestDate != GetTodayDateStr()) {
+                        requestDate = GetTodayDateStr();
+                        CreateTable();
+                    }
+                }
             }
+        }
+        catch {
             
-            if (requestDate) {
-                requestDate = null;
-                RequestCSVData();
-            }
         }
     };
 
     dataRequest.open('GET', csvDataURL);
 
+    isCSVRequest = true;
+    SetLoading(true);
     dataRequest.send();
 }
 
@@ -326,12 +363,7 @@ function CreateMenu() {
 
     menuStr += '<div id="category">';
     for (var index = 0; index < CategoryList.length; index++) {
-        if (index == categoryIndex) {
-            menuStr += '<li class="menu-item category currentItem"><a href="' + CSVViewerURL + 'data=' + CategoryList[index][CategoryKey_Name] + '">' + CategoryList[index][CategoryKey_Name] + '</a></li>';
-        }
-        else {
-            menuStr += '<li class="menu-item category"><a href="' + CSVViewerURL + 'data=' + CategoryList[index][CategoryKey_Name] + '">' + CategoryList[index][CategoryKey_Name] + '</a></li>';
-        }
+        menuStr += '<li class="menu-item category" data-category-name="' + CategoryList[index][CategoryKey_Name] + '"><a href="#">' + CategoryList[index][CategoryKey_Name] + '</a></li>';
     }
     menuStr += '</div>';
 
@@ -346,50 +378,102 @@ function CreateMenu() {
     
     document.getElementById('menu_list').innerHTML = menuStr;
 
+    // Category
+    var menu = GetCategoryMenu();
+    for (var index = 0; index < menu.length; index++) {
+        menu[index].addEventListener('click', function() {
+            categoryName = this.dataset.categoryName;
+            CreateTable();
+            CheckAllLastDataMenu();
+        });
+    };
+
+    // Last Data
     AddLastDateMenu();
+
+    menu = GetLastDateMenu();
+    for (var index = 0; index < menu.length; index++) {
+        menu[index].addEventListener('click', function() {
+            requestDate = this.dataset.date;
+            CreateTable();
+        });
+    };
+
+    UpdateMenu();
+    CheckAllLastDataMenu();
 }
 
 function AddLastDateMenu() {
     var firstDate = FirstDataDate;
     var lastDataDate = new Date();
-    var currentDate = new Date();
 
     while (firstDate < lastDataDate) {
         var dateStr = GetDateStr(lastDataDate);
         var printDateStr = dateStr.substr(0, 4) + '년 ' + dateStr.substr(4) + '월 데이터';
 
-        var dataURL = '';
-        if (lastDataDate.getFullYear() == currentDate.getFullYear() && lastDataDate.getMonth() == currentDate.getMonth()) {
-            dataURL = CSVViewerURL + 'data=' + categoryName;
-        }
-        else {
-            dataURL = CSVViewerURL + 'data=' + categoryName + '&date=' + dateStr;
-        }
-
-        if ((!requestDate && dateStr == GetDateStr(currentDate)) ||requestDate == dateStr) {
-            document.getElementById('last_data').innerHTML += '<li class="menu-item last_data currentItem" id="last_data-' + dateStr + '"><a href="' + dataURL + '">' + printDateStr + '</a></li>';
-        }
-        else {
-            document.getElementById('last_data').innerHTML += '<li class="menu-item last_data" id="last_data-' + dateStr + '"><a href="' + dataURL + '">' + printDateStr + '</a></li>';
-        }
-        CheckLastDateMenu(dateStr);
+        document.getElementById('last_data').innerHTML += '<li class="menu-item last_data" id="last_data-' + dateStr + '" data-date="' + dateStr + '"><a href="#">' + printDateStr + '</a></li>';
 
         lastDataDate.setMonth(lastDataDate.getMonth() - 1);
     }
 }
 
-function CheckLastDateMenu(dateStr) {
-    if (dateStr != GetDateStr(new Date)) {
+function CheckLastDataMenu(dateStr) {
+    if (dateStr != GetTodayDateStr()) {
         var request = new XMLHttpRequest();
         request.open('GET', GetCSVURL(dateStr), true);
         request.onreadystatechange = function() {
-            if (request.readyState === request.DONE) {
-                if (request.status === 404) {
-                    document.getElementById('last_data-' + dateStr).remove();
+            try {
+                if (request.readyState === request.DONE) {
+                    if (request.status === 404) {
+                        document.getElementById('last_data-' + dateStr).hidden = true;//.remove();
+                    }
+                    else if (request.status === 200) {
+                        document.getElementById('last_data-' + dateStr).hidden = false;
+                    }
                 }
+            }
+            catch {
+
             }
         }
         request.send();
+    }
+}
+
+function CheckAllLastDataMenu() {
+    var menu = GetLastDateMenu();
+    for (var index = 0; index < menu.length; index++) {
+        CheckLastDataMenu(menu[index].dataset.date);
+    }
+}
+
+function GetCategoryMenu() {
+    return document.getElementsByClassName('menu-item category');
+}
+
+function GetLastDateMenu() {
+    return document.getElementsByClassName('menu-item last_data');
+}
+
+function UpdateMenu() {
+    var menu = GetCategoryMenu();
+    for (var index = 0; index < menu.length; index++) {
+        if (menu[index].dataset.categoryName == categoryName) {
+            menu[index].classList.add('currentItem');
+        }
+        else {
+            menu[index].classList.remove('currentItem');
+        }
+    }
+
+    menu = GetLastDateMenu();
+    for (var index = 0; index < menu.length; index++) {
+        if (menu[index].dataset.date == requestDate) {
+            menu[index].classList.add('currentItem');
+        }
+        else {
+            menu[index].classList.remove('currentItem');
+        }
     }
 }
 
@@ -401,4 +485,13 @@ function GetDateStr(date) {
     dateStr += (date.getMonth()+1);
 
     return dateStr;
+}
+
+function GetTodayDateStr() {
+    return GetDateStr(TodayDate);
+}
+
+
+function SetLoading(isShow) {
+    document.getElementById('loading').hidden = !isShow;
 }
