@@ -17,7 +17,7 @@ var ProductName = new Array();
 var categoryName;
 var categoryIndex = 0;
 var requestDate = null;
-var filterText;
+var searchText;
 
 var isLastFormattedData = false;
 
@@ -27,13 +27,22 @@ const CategoryKey_URL = 'url';
 
 const Parameter_Category = 'category'
 const Parameter_Date = 'date'
-const Parameter_Filter = 'search'
+const Parameter_Search = 'search'
 
 var tableHTMLDict = {}
 var isCSVRequest = false;
 
 
+var searchBox;
+const ChangeEvent = new Event('change');
+
+
 function main() {
+    searchBox = document.getElementById('input_search');
+    searchBox.addEventListener('change', function() {
+        SearchValueChange();
+    });
+
     GetCategoryData();
 }
 
@@ -80,7 +89,7 @@ function GetTable() {
 function GetRequestInfo() {
     categoryName = getParameterByName(Parameter_Category);
     requestDate = getParameterByName(Parameter_Date);
-    filterText = getParameterByName(Parameter_Filter);
+    searchText = getParameterByName(Parameter_Search);
 
     if (categoryName == '') {
         categoryIndex = 0;
@@ -140,6 +149,8 @@ function CreateTable() {
     }
 
     UpdateMenu();
+
+    UpdateURL();
 }
 
 function RequestCSVData() {
@@ -205,9 +216,8 @@ function RequestCSVData() {
                     tableHTMLDict[GetTableHTMLDictKey()] = tableStr;
                     GetTable().innerHTML = tableStr;
 
-                    if (filterText) {
-                        document.getElementById('input_filter').value = filterText;
-                        FindProduct(filterText);
+                    if (searchText) {
+                        SetSearchText(searchText);
                     }
 
                     isCSVRequest = false;
@@ -352,9 +362,22 @@ function getParameterByName(name) {
 }
 
 
-function FilterValueChange(){
-    if (document.getElementById('input_filter').value == "") ResetFind();
-    FindProduct(document.getElementById('input_filter').value);
+function SearchValueChange() {
+    searchText = searchBox.value;
+    
+    if (!searchText) ResetFind();
+    else FindProduct(searchText);
+
+    UpdateURL();
+}
+
+function ResetSearch() {
+    SetSearchText('');
+}
+
+function SetSearchText(newText) {
+    searchBox.value = newText;
+    searchBox.dispatchEvent(ChangeEvent);
 }
 
 
@@ -382,9 +405,12 @@ function CreateMenu() {
     var menu = GetCategoryMenu();
     for (var index = 0; index < menu.length; index++) {
         menu[index].addEventListener('click', function() {
-            categoryName = this.dataset.categoryName;
-            CreateTable();
-            CheckAllLastDataMenu();
+            if (categoryName != this.dataset.categoryName) {
+                categoryName = this.dataset.categoryName;
+                ResetSearch();
+                CreateTable();
+                CheckAllLastDataMenu();
+            }
         });
     };
 
@@ -394,8 +420,10 @@ function CreateMenu() {
     menu = GetLastDateMenu();
     for (var index = 0; index < menu.length; index++) {
         menu[index].addEventListener('click', function() {
-            requestDate = this.dataset.date;
-            CreateTable();
+            if (requestDate != this.dataset.date) {
+                requestDate = this.dataset.date;
+                CreateTable();
+            }
         });
     };
 
@@ -494,4 +522,22 @@ function GetTodayDateStr() {
 
 function SetLoading(isShow) {
     document.getElementById('loading').hidden = !isShow;
+}
+
+
+function GetCurrentURL() {
+    var url = CSVViewerURL + Parameter_Category + '=' + categoryName + '&' + Parameter_Date + '=' + requestDate;
+    if (searchText) {
+        url += '&' + Parameter_Search + '=' + searchText;
+    }
+    return url;
+}
+
+function UpdateURL() {
+    if (typeof(history.pushState) != 'undefined') {
+        history.pushState({'category': categoryName, 'date': requestDate, 'search': searchText}, '', GetCurrentURL());
+    }
+    else {
+        location.href = GetCurrentURL();
+    }
 }

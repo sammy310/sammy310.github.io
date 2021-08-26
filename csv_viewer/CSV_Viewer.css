@@ -110,7 +110,7 @@ input {
     border-image: initial;
 }
 
-.filter {
+.search {
     position: fixed;
     z-index: 1;
 
