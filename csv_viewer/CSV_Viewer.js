@@ -146,6 +146,7 @@ function CreateTable() {
     }
     else {
         GetTable().innerHTML = tableHTMLDict[htmlDataKey];
+        UpdateSearchText();
     }
 
     UpdateMenu();
@@ -216,21 +217,18 @@ function RequestCSVData() {
                     tableHTMLDict[GetTableHTMLDictKey()] = tableStr;
                     GetTable().innerHTML = tableStr;
 
-                    if (searchText) {
-                        SetSearchText(searchText);
-                    }
-
-                    isCSVRequest = false;
-                    SetLoading(false);
-
-                    return;
+                    UpdateSearchText();
                 }
                 else if (dataRequest.status === 404) {
                     if (requestDate != GetTodayDateStr()) {
                         requestDate = GetTodayDateStr();
                         CreateTable();
+                        return;
                     }
                 }
+
+                isCSVRequest = false;
+                SetLoading(false);
             }
         }
         catch {
@@ -378,6 +376,12 @@ function ResetSearch() {
 function SetSearchText(newText) {
     searchBox.value = newText;
     searchBox.dispatchEvent(ChangeEvent);
+}
+
+function UpdateSearchText() {
+    if (searchText) {
+        SetSearchText(searchText);
+    }
 }
 
 
