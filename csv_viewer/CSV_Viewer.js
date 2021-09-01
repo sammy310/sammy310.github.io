@@ -1,6 +1,6 @@
 
 const FirstDataDate = new Date(2020, 6, 1);
-const PriceDataChangeDate = new Date(2021, 8, 25);
+const PriceDataChangeDate = new Date(2021, 7, 25);
 const TodayDate = new Date();
 
 const CSVViewerURL = 'https://sammy310.github.io/csv_viewer/CSV_Viewer.html?';
@@ -114,7 +114,6 @@ function GetRequestInfo() {
     if (!requestDate) {
         requestDate = GetTodayDateStr();
     }
-    isLastFormattedData = (requestDate.substr(0, 4) <= PriceDataChangeDate.getFullYear() && requestDate.substr(4) <= (PriceDataChangeDate.getMonth()+1));
 }
 
 function GetCSVURL(dateStr) {
@@ -139,6 +138,8 @@ function GetTableHTMLDictKey() {
 
 function CreateTable() {
     if (isCSVRequest == true) return;
+
+    isLastFormattedData = (requestDate.substr(0, 4) <= PriceDataChangeDate.getFullYear() && requestDate.substr(4) <= (PriceDataChangeDate.getMonth()+1));
 
     var htmlDataKey = GetTableHTMLDictKey();
     if (tableHTMLDict[htmlDataKey] == undefined) {
