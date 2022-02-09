@@ -3,7 +3,7 @@ const FirstDataDate = new Date(2020, 6, 1);
 const PriceDataChangeDate = new Date(2021, 7, 25);
 const TodayDate = new Date();
 
-const CSVViewerURL = 'https://sammy310.github.io/dev/old/csv_viewer/CSV_Viewer.html?';
+const CSVViewerURL = 'https://sammy310.github.io/dev/csv_viewer/csv_viewer.html?';
 const CSVCategoryURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/CrawlingCategory.csv';
 const CurrentCSVDataURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/';
 const LastCSVDataURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/Last_Data/';
