@@ -3,7 +3,7 @@ const FirstDataDate = new Date(2020, 6, 1);
 const PriceDataChangeDate = new Date(2021, 7, 25);
 const TodayDate = new Date();
 
-const CSVViewerURL = 'https://sammy310.github.io/csv_viewer/CSV_Viewer.html?';
+const CSVViewerURL = 'https://sammy310.github.io/dev/old/csv_viewer/CSV_Viewer.html?';
 const CSVCategoryURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/CrawlingCategory.csv';
 const CurrentCSVDataURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/';
 const LastCSVDataURL = 'https://raw.githubusercontent.com/sammy310/Danawa-Crawler/master/crawl_data/Last_Data/';
@@ -121,7 +121,7 @@ function GetCSVURL(dateStr) {
 
     if (dateStr && dateStr.length == 6 && dateStr != GetTodayDateStr()) {
         csvDataURL = LastCSVDataURL;
-        csvDataURL += dateStr.substr(0, 4) + '-' + dateStr.substr(4) + '/';
+        csvDataURL += dateStr.substring(0, 4) + '-' + dateStr.substring(4) + '/';
     }
     else {
         csvDataURL = CurrentCSVDataURL;
@@ -139,7 +139,7 @@ function GetTableHTMLDictKey() {
 function CreateTable() {
     if (isCSVRequest == true) return;
 
-    isLastFormattedData = (requestDate.substr(0, 4) <= PriceDataChangeDate.getFullYear() && requestDate.substr(4) <= (PriceDataChangeDate.getMonth()+1));
+    isLastFormattedData = (requestDate.substring(0, 4) <= PriceDataChangeDate.getFullYear() && requestDate.substring(4) <= (PriceDataChangeDate.getMonth()+1));
 
     var htmlDataKey = GetTableHTMLDictKey();
     if (tableHTMLDict[htmlDataKey] == undefined) {
@@ -253,11 +253,11 @@ function CSVStrToArr(csvStr) {
         val = val.trim();
         if (val[0] == '"') {
             isStrSplit = true;
-            tempStr = val.substr(1);
+            tempStr = val.substring(1);
         }
         else if (val[val.length - 1] == '"') {
             isStrSplit = false;
-            tempStr += ',' + val.substr(0, val.length - 1);
+            tempStr += ',' + val.substring(0, val.length - 1);
             csvArr.push(tempStr);
         }
         else {
@@ -442,7 +442,7 @@ function AddLastDateMenu() {
 
     while (firstDate < lastDataDate) {
         var dateStr = GetDateStr(lastDataDate);
-        var printDateStr = dateStr.substr(0, 4) + '년 ' + dateStr.substr(4) + '월 데이터';
+        var printDateStr = dateStr.substring(0, 4) + '년 ' + dateStr.substring(4) + '월 데이터';
 
         document.getElementById('last_data').innerHTML += '<li class="menu-item last_data" id="last_data-' + dateStr + '" data-date="' + dateStr + '"><a href="#">' + printDateStr + '</a></li>';
 
