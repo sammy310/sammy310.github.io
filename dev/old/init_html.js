@@ -58,6 +58,7 @@ $(document).ready(function () {
                 <li><a href="/dev/old/develop/trian/trian.html">Trian</a></li>\
                 <li><a href="/dev/old/develop/eight_queens_problem/eight_queens_problem.html">8 퀸 문제</a></li>\
                 <li><a href="/dev/old/develop/slime/slime.html">슬라임</a></li>\
+                <li><a href="/dev/old/develop/mahjong/mahjong.html">mahjong</a></li>\
             </ul>\
         </li>\
     </ul>\
