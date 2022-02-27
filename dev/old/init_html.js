@@ -55,6 +55,7 @@ $(document).ready(function () {
         <li id="nav_develop"><a href="/dev/old/develop/develop.html">계발</a>\
             <ul id="nav_develop_list" class="nav_child_first">\
                 <li><a href="/dev/old/develop/barricade/barricade.html">바리케이드</a></li>\
+                <li><a href="/dev/old/develop/5rock/5rock.html">5樂(락)실</a></li>\
                 <li><a href="/dev/old/develop/minus/minus.html">마이너스</a></li>\
                 <li><a href="/dev/old/develop/trian/trian.html">Trian</a></li>\
                 <li><a href="/dev/old/develop/eight_queens_problem/eight_queens_problem.html">8 퀸 문제</a></li>\
